@@ -100,19 +100,7 @@ ArticleSchema.methods = {
   }
 }
 
-/**
- * Statics
- */
-
 ArticleSchema.statics = {
-
-  /**
-   * Find article by id
-   *
-   * @param {ObjectId} id
-   * @param {Function} cb
-   * @api private
-   */
 
   load: function (id, cb) {
     this.findOne({ _id : id })
@@ -120,14 +108,6 @@ ArticleSchema.statics = {
       .populate('comments.user')
       .exec(cb);
   },
-
-  /**
-   * List articles
-   *
-   * @param {Object} options
-   * @param {Function} cb
-   * @api private
-   */
 
   list: function (options, cb) {
     var criteria = options.criteria || {}
