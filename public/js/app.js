@@ -1,4 +1,4 @@
-$(function() {
+
 	new Morris.Line({
 	  element: 'myfirstchart',
 	  data: [
@@ -12,7 +12,7 @@ $(function() {
 	  ykeys: ['value'],
 	  labels: ['Value']
 	});
-});
+
 var app = angular.module('exchangeRatesApp', []).config(function($interpolateProvider){
     $interpolateProvider.startSymbol('{?').endSymbol('?}');
 })
