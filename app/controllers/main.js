@@ -21,11 +21,9 @@ exports.getData = function(req, res){
     data = data.widget[0].data
     for(index in data){
     	chart_data.push({date: moment(data[index][0]).format('YYYY-MM-DD'), value: data[index][1]});    	
-    }
-    console.log(chart_data)
+    }    
 	  request({method: "GET", url: "http://www.currency.me.uk/remote/ER-CCCS2-AJAX.php?ConvertTo="+req.query.to+"&ConvertFrom="+req.query.from+"&amount=1"}, function (err, response, body){
 	    res.json({
-	    	title: 'Exchange rates',
 	    	rate: response.body,
 	    	chart_data: chart_data
 	  	});

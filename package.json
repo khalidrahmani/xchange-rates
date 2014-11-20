@@ -47,6 +47,7 @@
     "serve-favicon": "latest",
     "validator": "latest",    
     "mongoose-validator": "latest",
+    "request": "latest",
     "mongoose-unique-validator": "latest"
 
     
