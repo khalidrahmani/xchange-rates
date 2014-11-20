@@ -46,7 +46,10 @@
     "winston": "latest",
     "serve-favicon": "latest",
     "validator": "latest",    
-    "mongoose-validator": "latest"
+    "mongoose-validator": "latest",
+    "mongoose-unique-validator": "latest"
+
+    
 
   },
   "devDependencies": {
