@@ -15,6 +15,7 @@ exports.show = function (req, res){
 
 exports.getData = function(req, res){
   history_url  = 'http://www.oanda.com/currency/historical-rates/update?quote_currency=EUR&end_date=2014-11-20&start_date=2014-10-22&period=daily&display=absolute&rate=0&data_range=d30&price=bid&view=graph&base_currency_0=MAD'
+  history_url  = 'http://www.oanda.com/currency/historical-rates/update?quote_currency=EUR&end_date=2014-11-20&start_date=2012-11-20&period=weekly&display=absolute&rate=0&data_range=y2&price=bid&view=graph&base_currency_0=MAD'
   request({url: history_url, headers: {'X-Requested-With': 'XMLHttpRequest'}}, function (err, response, body){
     var chart_data = []
     data = JSON.parse(response.body)

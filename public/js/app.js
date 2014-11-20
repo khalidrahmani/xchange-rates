@@ -4,17 +4,20 @@ var app = angular.module('exchangeRatesApp', []).config(function($interpolatePro
 })
 
 app.controller('mainController', function($scope, $http, mainFactory){
-
   function init(){
     mainFactory.getData().success(function(data){
-      $scope.data = data;
-      chart = new Morris.Line({
-	  element: 'myfirstchart',
-	  data: data.chart_data,
-	  xkey: 'date',
-	  ykeys: ['value'],
-	  labels: ['Value']
-	});
+      	$scope.data = data;
+		  chart = new Morris.Line({
+		  element: 'myfirstchart',
+		  data: data.chart_data,
+		  xkey: 'date',
+		  ykeys: ['value'],
+		  labels: ['rate'],
+		  ymin: 10.75,
+		  ymax: 11.25,
+		  smooth: false,
+		  events: ['2013-01-01', '2013-03-01', '2013-11-01']
+		});
     })
   };
   init();
