@@ -45,6 +45,7 @@
     "view-helpers": "latest",
     "winston": "latest",
     "serve-favicon": "latest",
+    "validator": "latest",    
     "mongoose-validator": "latest"
 
   },
