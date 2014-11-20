@@ -1,5 +1,6 @@
 {% extends '../layouts/layout.html' %}
 {% block main %}
+<div ng-controller="mainController">
 	<form action="/show" method="get">from :
 		<select name="from">
 			<option value="USD">USD</option>
@@ -31,6 +32,8 @@
 		<button type="submit" name="view" value="1year">1 year</button>
 		<button type="submit" name="view" value="2years">2 years</button>
 		<button type="submit" name="view" value="5years">5 years</button>
+
 	</form>
 	<div id="myfirstchart" style="height: 250px;"></div>
+</div>	
 {% endblock %}
