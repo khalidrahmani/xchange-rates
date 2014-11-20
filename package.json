@@ -48,6 +48,7 @@
     "validator": "latest",    
     "mongoose-validator": "latest",
     "request": "latest",
+    "moment": "latest",
     "mongoose-unique-validator": "latest"
 
     
