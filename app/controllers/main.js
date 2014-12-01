@@ -1,10 +1,15 @@
-var request = require("request"),
-	moment  = require("moment")
+var request  = require("request"),
+	  moment   = require("moment"),
+    mongoose = require('mongoose'),
+    Currency = mongoose.model('Currency');
 
 exports.index = function (req, res){  
-  res.render('main/index', {
-    title: 'Exchange rates'
-  });
+  Currency.find({}).sort({short_name: 1}).exec(function(err, currencies){
+    res.render('main/index', {
+      title: 'Exchange rates',
+      currencies: currencies
+    });
+  })
 };
 
 exports.show = function (req, res){
@@ -40,7 +45,7 @@ exports.getData = function(req, res){
           ymax = (rate > ymax || ymax == 0) ? rate : ymax;
           date = moment(data[index][0]).format('YYYY-MM-DD')
         	chart_data.push({date: date, value: rate});
-        }        
+        }
         if(chart_data[0].date == today)    chart_data[0].value = current_rate
         else chart_data.push({date: today, value: current_rate});
         ymin = getMin(ymin);
@@ -55,6 +60,7 @@ exports.getData = function(req, res){
     	  });
   });
 }
+
 function getMin(min){
   var tmp      = parseInt(min) - 1;
   while(true){
@@ -62,6 +68,7 @@ function getMin(min){
     if(tmp > min) return tmp - 0.0625;    
   }
 }
+
 function getMax(max){  
   var tmp   = parseInt(max) + 1;  
   while(true){

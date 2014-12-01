@@ -1,30 +1,12 @@
-
-/*!
- * Module dependencies.
- */
-
-// Note: We can require users, articles and other cotrollers because we have
-// set the NODE_PATH to be ./app/controllers (package.json # scripts # start)
-
 var users = require('../app/controllers/users');
-var articles = require('../app/controllers/articles');
 var main = require('../app/controllers/main');
 var auth = require('./middlewares/authorization');
-
-/**
- * Route middlewares
- */
 
 var articleAuth = [auth.requiresLogin, auth.article.hasAuthorization];
 var commentAuth = [auth.requiresLogin, auth.comment.hasAuthorization];
 
-/**
- * Expose routes
- */
-
 module.exports = function (app, passport) {
 
-  // user routes
   app.get('/login', users.login);
   app.get('/signup', users.signup);
   app.get('/logout', users.logout);
@@ -38,15 +20,6 @@ module.exports = function (app, passport) {
   
 
   app.param('userId', users.load);
-
-  app.param('id', articles.load);
-  app.get('/articles', articles.index);
-  app.get('/articles/new', auth.requiresLogin, articles.new);
-  app.post('/articles', auth.requiresLogin, articles.create);
-  app.get('/articles/:id', articles.show);
-  app.get('/articles/:id/edit', articleAuth, articles.edit);
-  app.put('/articles/:id', articleAuth, articles.update);
-  app.delete('/articles/:id', articleAuth, articles.destroy);
 
   app.get('/', main.index);
   app.get('/show', main.show);  
