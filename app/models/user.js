@@ -1,8 +1,3 @@
-
-/**
- * Module dependencies.
- */
-
 var mongoose = require('mongoose');
 var crypto = require('crypto');
 
@@ -14,10 +9,6 @@ var oAuthTypes = [
   'google',
   'linkedin'
 ];
-
-/**
- * User Schema
- */
 
 var UserSchema = new Schema({
   name: { type: String, default: '' },
@@ -34,10 +25,6 @@ var UserSchema = new Schema({
   linkedin: {}
 });
 
-/**
- * Virtuals
- */
-
 UserSchema
   .virtual('password')
   .set(function(password) {
@@ -46,10 +33,6 @@ UserSchema
     this.hashed_password = this.encryptPassword(password);
   })
   .get(function() { return this._password });
-
-/**
- * Validations
- */
 
 var validatePresenceOf = function (value) {
   return value && value.length;
