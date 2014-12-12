@@ -24,6 +24,7 @@ if (fs.existsSync(envFile)) {
  */
 
 module.exports = {
+  openexchangeAPPID: '19c36fcf307446fcad05a97734096a76',
   db: 'mongodb://localhost/xchange_rates',
   facebook: {
     clientID: process.env.FACEBOOK_CLIENTID,

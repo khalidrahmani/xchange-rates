@@ -4,6 +4,7 @@
  */
 
 module.exports = {
+  openexchangeAPPID: 'b4bc9f84743145d08227a3c41a3e133b',
   db: process.env.MONGOHQ_URL,
   facebook: {
     clientID: process.env.FACEBOOK_CLIENTID,
