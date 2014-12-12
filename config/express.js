@@ -1,7 +1,6 @@
 var express = require('express');
 var session = require('express-session');
 var compression = require('compression');
-var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var cookieSession = require('cookie-session');
 var bodyParser = require('body-parser');
@@ -39,8 +38,6 @@ module.exports = function (app, passport) {
   } else {
     log = 'dev';
   }
-
-  if (env !== 'test') app.use(morgan(log));
 
   if (env === 'development' || env === 'test') {
     swig.setDefaults({
