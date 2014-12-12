@@ -36,7 +36,6 @@
     "forever": "latest",
     "method-override": "latest",
     "mongoose": "latest",
-    "multer": "latest",
     "notifier": "latest",
     "passport": "latest",
     "passport-local": "latest",
