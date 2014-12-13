@@ -33,7 +33,7 @@ RateSchema.statics = {
     _this = this
     this.find({range: {$in: [d.d]}, timestamp: {$gt: timestamp}}).sort({timestamp: 1}).exec(function(err, rates){ 
       data = []
-      for(i in rates){        
+      for(i in rates){
         r = (rates[i].rates[to])/(rates[i].rates[from])
         r = Math.round(r * 10000) / 10000        
         data.push([(rates[i].timestamp )*1000, r]) // api timestamp is in seconds and chart in milliseconds
@@ -41,7 +41,7 @@ RateSchema.statics = {
       _this.findOne({}).sort({timestamp: -1}).exec(function(err, rate){ 
         r = (rate.rates[to])/(rate.rates[from])
         r = Math.round(r * 10000) / 10000        
-        data.push([rate.timestamp*1000, r]) // api timestamp is in seconds and chart in milliseconds
+        if(date_range != '1day') data.push([rate.timestamp*1000, r]) // api timestamp is in seconds and chart in milliseconds
         cb(data)      
       })
     })
