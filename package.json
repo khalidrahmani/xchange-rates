@@ -26,11 +26,9 @@
     "async": "latest",
     "body-parser": "latest",
     "compression": "latest",
-    "connect-flash": "latest",
     "connect-mongo": "latest",
     "cookie-parser": "latest",
     "cookie-session": "latest",
-    "csurf": "latest",
     "express": "latest",
     "express-session": "latest",
     "forever": "latest",
@@ -41,15 +39,12 @@
     "passport-local": "latest",
     "swig": "latest",
     "view-helpers": "latest",
-    "winston": "latest",
     "serve-favicon": "latest",
     "validator": "latest",    
     "mongoose-validator": "latest",
     "request": "latest",
     "moment": "latest",
     "mongoose-unique-validator": "latest"
-
-    
 
   },
   "devDependencies": {

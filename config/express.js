@@ -10,7 +10,6 @@ var swig = require('swig');
 var favicon = require('serve-favicon');
 var mongoStore = require('connect-mongo')(session);
 var flash = require('connect-flash');
-var winston = require('winston');
 var helpers = require('view-helpers');
 var config = require('./config');
 
@@ -25,19 +24,6 @@ module.exports = function (app, passport) {
   app.use(express.static(config.root + '/public'));
   app.use(favicon(__dirname + '/../public/favicon.ico'));
 
-  var log;
-  if (env !== 'development') {
-    log = {
-      stream: {
-        write: function (message, encoding) {
-          winston.info(message);
-        }
-      }
-    };
-  } else {
-    log = 'dev';
-  }
-
   if (env === 'development' || env === 'test') {
     swig.setDefaults({
       cache: false
@@ -47,14 +33,6 @@ module.exports = function (app, passport) {
   app.engine('html', swig.renderFile);
   app.set('views', config.root + '/app/views');
   app.set('view engine', 'html');
-
-/*
-  app.use(function (req, res, next) {
-    res.locals.pkg = pkg;
-    res.locals.env = env;
-    next();
-  });
-*/
 
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
