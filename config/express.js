@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var cookieSession = require('cookie-session');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-var csrf = require('csurf');
 var swig = require('swig');
 var favicon = require('serve-favicon');
 var mongoStore = require('connect-mongo')(session);
