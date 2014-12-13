@@ -9,7 +9,6 @@ var csrf = require('csurf');
 var swig = require('swig');
 var favicon = require('serve-favicon');
 var mongoStore = require('connect-mongo')(session);
-var flash = require('connect-flash');
 var helpers = require('view-helpers');
 var config = require('./config');
 
@@ -57,24 +56,7 @@ module.exports = function (app, passport) {
     })
   }));
 
-  // use passport session
   app.use(passport.initialize());
   app.use(passport.session());
 
-  // connect flash for flash messages - should be declared after sessions
-  app.use(flash());
-
-  // should be declared after session and flash
-  //app.use(helpers(pkg.name));
-
-  // adds CSRF support
-  if (process.env.NODE_ENV !== 'test') {
-    app.use(csrf());
-
-    // This could be moved to view-helpers :-)
-    app.use(function (req, res, next) {
-      res.locals.csrf_token = req.csrfToken();
-      next();
-    });
-  }
 };
