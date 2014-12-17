@@ -25,6 +25,8 @@ app.controller('mainController', function($scope, $http, $location, mainFactory)
 
 	//    $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
 	        console.log(data)
+	        $scope.current_rate = data.current_rate
+	        $scope.amount = data.amount
 	        $('#rateschart').highcharts('StockChart', {
 	            rangeSelector : {
 	                enabled : false

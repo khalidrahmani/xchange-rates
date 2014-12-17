@@ -23,7 +23,7 @@ module.exports = function (app, passport) {
 
   app.get('/', main.index);
   app.get('/show', main.show);  
-  app.get('/main/getData', main.getData);    
+  //app.get('/main/getData', main.getData);    
 
   app.use(function (err, req, res, next) {
     if (err.message

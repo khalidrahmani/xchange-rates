@@ -9,17 +9,32 @@ exports.index = function (req, res){
 };
 
 exports.show = function (req, res){
-  res.render('main/show', {
-    title: 'Exchange rates'
-  });
-};
-
-exports.getData = function(req, res){
-  var from        = req.query.from,
+  var amount      = req.query.amount,
+      from        = req.query.from,
       to          = req.query.to,
       date_range  = req.query.view
-  Rate.getHistoricalRates(date_range, from, to, function(rates){
-    res.json({chart_data: rates})
+  Rate.getHistoricalRates(date_range, from, to, function(rates, current_rate){
+    res.render('main/show', {
+      title: 'Exchange rates',
+      chart_data: JSON.stringify(rates),
+      current_rate: current_rate,
+      result: current_rate*amount,
+      amount: amount,
+      from: from,
+      to: to
+    });
   });  
-}
+};
 
+/*
+exports.getData = function(req, res){
+  var amount      = req.query.amount,
+      from        = req.query.from,
+      to          = req.query.to,
+      date_range  = req.query.view
+
+  Rate.getHistoricalRates(date_range, from, to, function(rates, current_rate){
+    res.json({chart_data: rates, current_rate: current_rate, result: current_rate*amount})
+  });
+}
+*/

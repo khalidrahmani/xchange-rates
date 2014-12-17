@@ -1,6 +1,7 @@
 {% extends '../layouts/layout.html' %}
 {% block main %}
-	<form action="/show" method="get">from :
+	<form action="/show" method="get">
+		<input type="text" name="amount" value="1"/>
 		<select name="from">
 		 	<option value="USD">USD - United States Dollar</option>	
 		 	<option value="EUR">EUR - Euro</option>		 
@@ -332,7 +333,6 @@
 		 	<option value="ZWL">ZWL - Zimbabwean Dollar</option>		 	
 		</select>
 		<button type="submit" name="view" value="1day">Ok</button>
-		<button type="submit" name="view" value="1day">1 Day</button>
 		<button type="submit" name="view" value="1week">1 week</button>
 		<button type="submit" name="view" value="1month">1 month</button>
 		<button type="submit" name="view" value="1year">1 year</button>
