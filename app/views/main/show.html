@@ -1,10 +1,8 @@
 {% extends '../layouts/layout.html' %}
 {% block main %}
-<div ng-controller="mainController">	
+<div>	
 <form action="/show" method="get">
-
-        <input type="text" name="amount" value="{{amount || 1}}"/>
-		
+        <input type="text" name="amount" value="{{amount || 1}}"/>		
 		<select name="from" id="from">
 		 	<option value="USD">USD - United States Dollar</option>	
 		 	<option value="EUR">EUR - Euro</option>		 
@@ -345,5 +343,38 @@
 	<br/>
 	<div id="rateschart" style="height: 320px; width: 700px; "> </div>
 </div>	
-<script type="text/javascript"> var chart_data = {{ chart_data }}, from = "{{ from }}", to = "{{ to }}"</script>
+{% endblock %}
+{% block script %}		
+	<script src="//code.highcharts.com/stock/highstock.js"></script>
+	<script type="text/javascript"> 
+	$(function(){	
+		$('#from').val("{{from}}");
+		$('#to').val("{{to}}");
+		$('#rateschart').highcharts('StockChart', {
+		    chart: {
+				plotBorderWidth: 1
+			},
+			colors: ['#FF6600'],
+			yAxis: {
+				opposite: false
+			},
+		    rangeSelector : {
+		        enabled : false
+		    },	            
+				navigator : {
+		        enabled : false
+		    },
+		    scrollbar : {
+		        enabled : false
+		    },            
+		    series : [{
+		        name : 'value',
+		        data : {{ chart_data }},
+		        tooltip: {
+		            valueDecimals: 4
+		        }
+		    }]
+		});	
+	})
+	</script>
 {% endblock %}
