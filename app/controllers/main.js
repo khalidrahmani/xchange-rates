@@ -18,7 +18,7 @@ exports.show = function (req, res){
       title: 'Exchange rates',
       chart_data: JSON.stringify(rates),
       current_rate: current_rate,
-      result: current_rate*amount,
+      result: Math.round(current_rate*amount*100)/100,
       amount: amount,
       from: from,
       to: to
