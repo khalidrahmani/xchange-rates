@@ -12,13 +12,14 @@ exports.show = function (req, res){
   var amount      = req.query.amount,
       from        = req.query.from,
       to          = req.query.to,
-      date_range  = req.query.view
-  Rate.getHistoricalRates(date_range, from, to, function(rates, current_rate){
+      view  = req.query.view
+  Rate.getHistoricalRates(view, from, to, function(rates, current_rate){
     res.render('main/show', {
       title: 'Exchange rates',
       chart_data: JSON.stringify(rates),
       current_rate: current_rate,
       result: Math.round(current_rate*amount*100)/100,
+      view: view,
       amount: amount,
       from: from,
       to: to
@@ -26,15 +27,4 @@ exports.show = function (req, res){
   });  
 };
 
-/*
-exports.getData = function(req, res){
-  var amount      = req.query.amount,
-      from        = req.query.from,
-      to          = req.query.to,
-      date_range  = req.query.view
 
-  Rate.getHistoricalRates(date_range, from, to, function(rates, current_rate){
-    res.json({chart_data: rates, current_rate: current_rate, result: current_rate*amount})
-  });
-}
-*/

@@ -5710,7 +5710,14 @@ html.bg {
   	<body id="coming-soon">
 
   		{% block main %}{% endblock %}
-		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>		
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>	
+		<script type="text/javascript"> 
+			$("#swap").click(function(e){
+				tmp = $("#from").val()
+				$('#from').val($('#to').val());
+				$('#to').val(tmp);
+			})
+		</script>	
 		{% block script %}{% endblock %}
 	</body>
 </html>
