@@ -21,7 +21,7 @@ RateSchema.statics = {
   },  
   getHistoricalRates: function (date_range, from, to, cb) {  
     ranges = {'1day':   {d:'hour', n: 1, v: 'day'},
-              '1week':  {d:'day', n: 1, v: 'week'}, 
+              '1week':  {d:'hour', n: 1, v: 'week'}, 
               '1month': {d:'day', n: 1, v: 'month'}, 
               '1year':  {d:'week', n: 1, v: 'year'}, 
               '2years': {d:'week', n: 2, v: 'year'},
