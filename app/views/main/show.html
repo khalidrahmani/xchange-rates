@@ -342,7 +342,8 @@
 </div>
 <button type="submit" class="button" name="view" value="1day">Ok</button>
 <div class="row result">
-   	<div>{{from}}/{{to}} {{current_rate}}{% if amount != 1 %} - {{amount}}{{from}} = {{result}}{{to}} {% endif %}</div>
+   	<div>{{from}}/{{to}} <label>{{current_rate}}</label>
+   	{% if amount != 1 %} - {{amount}}{{from}} = {{result}}{{to}} {% endif %}</div>
 </div>
 <div class="row chart">	
 	<div class="col-md-12">			
