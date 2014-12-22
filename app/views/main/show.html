@@ -341,25 +341,24 @@
 </select>
 </div>
 <button type="submit" class="button" name="view" value="1day">Ok</button>
-                <div class="row result">
-                	<div>Rate : {{current_rate}} {{to}}{% if amount != 1 %}, Result : {{result}} {{to}} {% endif %}</div>
-                </div>
-				
-				<div class="row chart">	
-					<div class="col-md-12">			
-						<div id="rateschart" style='height: 320px; width: 700px;' class="center-block"> </div>
-					</div>
-				</div>
-				<button class="btn btn-default btn-xs btn-info" type="submit" name="view" id="1day" value="1day">1 day</button>
-				<button class="btn btn-default btn-xs btn-info" type="submit" name="view" id="1week" value="1week">1 week</button>
-				<button class="btn btn-default btn-xs btn-info" type="submit" name="view" id="1month" value="1month">1 month</button>
-				<button class="btn btn-default btn-xs btn-info" type="submit" name="view" id="1year" value="1year">1 year</button>
-				<button class="btn btn-default btn-xs btn-info" type="submit" name="view" id="2years" value="2years">2 years</button>
-				<button class="btn btn-default btn-xs btn-info" type="submit" name="view" id="5years" value="5years">5 years</button>
-			</form>
-		</div>
+<div class="row result">
+   	<div>{{from}}/{{to}} {{current_rate}}{% if amount != 1 %} - {{amount}}{{from}} = {{result}}{{to}} {% endif %}</div>
+</div>
+<div class="row chart">	
+	<div class="col-md-12">			
+		<div id="rateschart" style='height: 320px; width: 700px;' class="center-block"></div>
 	</div>
 </div>
+<button class="btn btn-default btn-xs btn-info" type="submit" name="view" id="1day" value="1day">1 day</button>
+<button class="btn btn-default btn-xs btn-info" type="submit" name="view" id="1week" value="1week">1 week</button>
+<button class="btn btn-default btn-xs btn-info" type="submit" name="view" id="1month" value="1month">1 month</button>
+<button class="btn btn-default btn-xs btn-info" type="submit" name="view" id="1year" value="1year">1 year</button>
+<button class="btn btn-default btn-xs btn-info" type="submit" name="view" id="2years" value="2years">2 years</button>
+<button class="btn btn-default btn-xs btn-info" type="submit" name="view" id="5years" value="5years">5 years</button>
+</form>
+</div>
+</div>
+</div>	
 {% endblock %}
 {% block script %}		
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
