@@ -144,13 +144,12 @@
 			</div>
 		</div>		
   		{% block main %}{% endblock %}
-		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>	
 		<script type="text/javascript"> 
-			$("#swap").click(function(e){
-				tmp = $("#from").val()
-				$('#from').val($('#to').val());
-				$('#to').val(tmp);
-			})
+		function swap() {
+			var tmp = document.getElementById("from").value
+    		document.getElementById("from").value = document.getElementById("to").value;
+    		document.getElementById("to").value = tmp
+		}
 		</script>	
 		{% block script %}{% endblock %}
 	</body>
