@@ -9,7 +9,7 @@
 	<meta content="exchange rates, currency, currencies, converter, dollar, euro, conversion, bitcoin, forex" name="keywords">
 	<meta content="Exchange Rates" name="title">
 	<meta name="robots" content="index, follow">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<!--link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"-->
 	<style type="text/css">
 	.button {
 	  -webkit-font-smoothing: antialiased;
@@ -150,7 +150,18 @@
     		document.getElementById("from").value = document.getElementById("to").value;
     		document.getElementById("to").value = tmp
 		}
+      var cb = function() {
+        var l = document.createElement('link'); l.rel = 'stylesheet';
+        l.href = '//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css';
+        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(cb);
+      else window.addEventListener('load', cb);
+
 		</script>	
+
 		{% block script %}{% endblock %}
 	</body>
 </html>
