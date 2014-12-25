@@ -18,7 +18,7 @@ RateSchema.statics = {
       r = Math.round(r * 10000) / 10000
       cb(r)
     })
-  },  
+  },
   getHistoricalRates: function (date_range, from, to, cb) {  
     ranges = {'1day':   {d:'hour',  n: 1, v: 'day'},
               '1week':  {d:'hour',  n: 1, v: 'week'}, 
