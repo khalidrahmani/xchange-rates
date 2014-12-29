@@ -44,7 +44,6 @@ exports.CurrencyRSSFeed = function (req, res){
     var feed = new RSS({
         title:          'Latest Exchange Rates For '+ from_currency,
         description:    'RSS Exchange Feed for '+from_currency,
-        url:            'http://www.xchange-rates.com/',        
         copyright:      'Copyright © 2015 www.xchange-rates.com All rights reserved'
     });
     rates = current_rate.rates
