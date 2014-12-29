@@ -10,5 +10,9 @@ var CurrencySchema = new Schema({
   valid:           {type: Boolean, default: true}
 });
 
+CurrencySchema.virtual('country_code').get(function () {
+  return this.short_name.substring(0,2).toLowerCase();
+});
+
 CurrencySchema.plugin(uniqueValidator, { message: '{PATH} already in use.' })
 mongoose.model('Currency', CurrencySchema);

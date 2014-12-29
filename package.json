@@ -44,8 +44,8 @@
     "mongoose-validator": "latest",
     "request": "latest",
     "moment": "latest",
-    "mongoose-unique-validator": "latest"
-
+    "mongoose-unique-validator": "latest",
+    "rss": "latest"
   },
   "devDependencies": {
     "supertest": "0.13.0",

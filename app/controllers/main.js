@@ -1,6 +1,8 @@
 var request   = require("request"),
     mongoose  = require('mongoose'),
-    Rate      = mongoose.model('Rate')
+    Rate      = mongoose.model('Rate'),
+    Currency  = mongoose.model('Currency'),
+    RSS       = require('rss')
 
 exports.index = function (req, res){  
     res.render('main/index', {
@@ -27,4 +29,36 @@ exports.show = function (req, res){
   });  
 };
 
+exports.CurrencyRSSFeeds = function (req, res){  
+  Currency.find({}).sort({long_name: 1}).exec(function (err, currencies){
+    res.render('main/rss', {
+      currencies: currencies,
+      title: 'Exchange rates'
+    });
+  });  
+};
 
+exports.CurrencyRSSFeed = function (req, res){
+  from_currency = req.params.currency
+  Rate.findOne({}).sort({timestamp: -1}).exec(function(err, current_rate){ 
+    var feed = new RSS({
+        title:          'Latest Exchange Rates For '+ from_currency,
+        description:    'RSS Exchange Feed for '+from_currency,
+        url:            'http://www.xchange-rates.com/',        
+        copyright:      'Copyright © 2015 www.xchange-rates.com All rights reserved'
+    });
+    rates = current_rate.rates
+    for(currency in rates){
+      r = (rates[currency])/(rates[from_currency])
+      r = Math.round(r * 10000) / 10000      
+      feed.item({
+        title:  from_currency+'/'+currency,
+        description: '1 ' + from_currency+ ' = '+r+' '+currency,
+        url: 'http://www.xchange-rates.com/show?amount=1&from='+from_currency+'&to='+currency+'&view=1month',
+        date: current_rate.timestamp*1000 // any format that js Date can parse.  
+      }); 
+    } 
+    res.set('Content-Type', 'text/xml');
+    res.send(feed.xml());       
+  })
+};

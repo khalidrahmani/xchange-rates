@@ -1,0 +1,20 @@
+{% extends '../layouts/layout.html' %}
+{% block style %}<link rel="stylesheet" href="/css/flags.css">{% endblock %}
+{% block main %}
+<div class="container">
+	<div class="row">	
+	<h3> Exchange Rates RSS Feed for all major currencies.</h3>
+		<div class="col-sm-6">
+		<ul>
+			{% for currency in currencies %}
+			<li>
+				<a href="/currency-rss-feed/{{currency.short_name}}/rss.xml">
+					<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="flag flag-{{currency.country_code}}" alt="Exchange rate rss feed {{currency.long_name}}" /> {{currency.long_name}} - {{currency.short_name}}
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}
