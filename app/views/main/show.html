@@ -1,5 +1,14 @@
 {% extends '../layouts/layout.html' %}
 {% block main %}
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=523819571070563&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
  <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -345,6 +354,7 @@
    	<div>{{from}}/{{to}} <label>{{current_rate}}</label>
    	{% if amount != 1 %} - {{amount}}{{from}} = {{result}}{{to}} {% endif %}</div>
 </div>
+
 <div class="row">	
 	<div class="col-md-10">			
 		<div id="rateschart" style='height: 320px; width: 700px;' class="center-block"></div>
@@ -359,49 +369,28 @@
 		<button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="5years" value="5years">5 years</button> <br>
 	</div>
 </div>
+<div class="row">
+   	<div class="col-md-6" id="share_div"> 
+   			<div class="col-md-2">
+	   		<div class="g-plusone" data-size="tall" data-annotation="none"></div> 
+	   		</div>
+	   		<div class="col-md-2">
+	   		<a href="https://twitter.com/share" class="twitter-share-button" data-via="XchangeRates">Tweet</a>
+	   		</div>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		<div class="col-md-2">
+			<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
+		</div>
+   	</div>
+</div>
 </form>
-
-		<!--div class="links">
-			<a href="#" data-type="twitter" data-url="http://sonnyt.com/prettySocial" data-description="Custom share buttons for Pinterest, Twitter, Facebook and Google Plus." data-via="sonnyt" class="prettySocial fa fa-twitter">
-				<img alt="twitter" src="http://lit-coast-9918.herokuapp.com/react12/images/social/social-tw.png">
-			</a>
-
-			<a href="#" data-type="facebook" data-url="http://sonnyt.com/prettySocial" data-title="prettySocial - custom social share buttons." data-description="Custom share buttons for Pinterest, Twitter, Facebook and Google Plus." data-media="http://sonnyt.com/assets/imgs/prettySocial.png" class="prettySocial fa fa-facebook">
-				<img alt="twitter" src="http://lit-coast-9918.herokuapp.com/react12/images/social/social-tw.png">				
-			</a>
-
-			<a href="#" data-type="googleplus" data-url="http://sonnyt.com/prettySocial" data-description="Custom share buttons for Pinterest, Twitter, Facebook and Google Plus." class="prettySocial fa fa-google-plus">
-				<img alt="twitter" src="http://lit-coast-9918.herokuapp.com/react12/images/social/social-tw.png">				
-			</a>
-			
-			<a href="#" data-type="pinterest" data-url="http://sonnyt.com/prettySocial" data-description="Custom share buttons for Pinterest, Twitter, Facebook and Google Plus." data-media="http://sonnyt.com/assets/imgs/prettySocial.png" class="prettySocial fa fa-pinterest">
-				<img alt="twitter" src="http://lit-coast-9918.herokuapp.com/react12/images/social/social-tw.png">				
-			</a>
-
-			<a href="#" data-type="linkedin" data-url="http://sonnyt.com/prettySocial" data-title="prettySocial - custom social share buttons." data-description="Custom share buttons for Pinterest, Twitter, Facebook and Google Plus." data-via="sonnyt" data-media="http://sonnyt.com/assets/imgs/prettySocial.png" class="prettySocial fa fa-linkedin">
-				<img alt="twitter" src="http://lit-coast-9918.herokuapp.com/react12/images/social/social-tw.png"> 				
-
-			</a>
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="XchangeRates">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-<div class="g-plusone" data-size="tall" data-annotation="none"></div>
-		</div-->
-
-
 </div>
 </div>
-</div>	
-
-
-
+</div>
 {% endblock %}
 {% block script %}
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/js/jquery.prettySocial.min.js"></script>
-<!-- Place this tag in your head or just before your close body tag. -->
-<!--script src="https://apis.google.com/js/platform.js" async defer></script-->
-
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="//code.highcharts.com/stock/highstock.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -432,8 +421,7 @@ $(function(){
 	            valueDecimals: 4
 	        }
 	    }]
-	});	
-	$('.prettySocial').prettySocial();
+	});
 })
 </script>
 {% endblock %}
