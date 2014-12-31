@@ -10,7 +10,6 @@ var RateSchema = new Schema({
   timestamp:        {type: Number, required: "can't be blank"}
 });
 
-
 RateSchema.statics = {  
   getRate: function (from, to, cb) {    
     this.findOne({}).sort({timestamp: -1}).exec(function(err, rate){ 

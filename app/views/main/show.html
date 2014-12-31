@@ -345,7 +345,7 @@
    	<div>{{from}}/{{to}} <label>{{current_rate}}</label>
    	{% if amount != 1 %} - {{amount}}{{from}} = {{result}}{{to}} {% endif %}</div>
 </div>
-<div class="row chart">	
+<div class="row">	
 	<div class="col-md-10">			
 		<div id="rateschart" style='height: 320px; width: 700px;' class="center-block"></div>
 	</div>
@@ -359,7 +359,6 @@
 		<button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="5years" value="5years">5 years</button> <br>
 	</div>
 </div>
-
 </form>
 
 		<!--div class="links">
@@ -406,14 +405,14 @@
 <script src="//code.highcharts.com/stock/highstock.js"></script>
 <script type="text/javascript">
 $(function(){
-	$("#{{view}}").removeClass("btn-info").addClass("btn-success");
+	$("#{{view}}").removeClass("btn-info").addClass("btn-warning");
 	$('#from').val("{{from}}");
 	$('#to').val("{{to}}");
 	$('#rateschart').highcharts('StockChart', {
 	    chart: {
 			plotBorderWidth: 1
 		},
-		colors: ['#FF6600'],
+		colors: ['#f0ad4e'],
 		yAxis: {
 			opposite: false
 		},
