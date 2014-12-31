@@ -25,7 +25,7 @@ module.exports = function (app, passport) {
   app.get('/show', main.show);  
   
   app.get('/currency-rss-feeds', main.CurrencyRSSFeeds);    
-  app.get('/currency-rss-feed/:currency/rss.xml', main.CurrencyRSSFeed);
+  app.get('/currency-rss-feed/:currency/feed.rss', main.CurrencyRSSFeed);
   //app.get('/main/getData', main.getData);    
 
   app.use(function (err, req, res, next) {

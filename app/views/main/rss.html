@@ -8,7 +8,7 @@
 		<ul class="list-group">
 			{% for currency in currencies %}
 			<li class="list-group-item">
-				<a href="/currency-rss-feed/{{currency.short_name}}/rss.xml">
+				<a href="/currency-rss-feed/{{currency.short_name}}/feed.rss">
 					<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="flag flag-{{currency.country_code}}" alt="Exchange rate rss feed {{currency.long_name}}" /> {{currency.long_name}} - {{currency.short_name}}
 				</a>
 			</li>
