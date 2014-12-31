@@ -26,8 +26,7 @@ RateSchema.statics = {
               '3months': {d:'day',   n: 3, v: 'month'}, 
               '1year':   {d:'week',  n: 1, v: 'year'}, 
               '2years':  {d:'week',  n: 2, v: 'year'},
-              '5years':  {d:'month', n: 5, v: 'year'}}
-              
+              '5years':  {d:'month', n: 5, v: 'year'}}              
     d = ranges[date_range]          
     timestamp = moment().subtract(d.n, d.v)
     timestamp = timestamp.format('X')
