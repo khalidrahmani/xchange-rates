@@ -5,9 +5,9 @@
 	<div class="row">	
 	<h3> Exchange Rates RSS Feed for all major currencies.</h3>
 		<div class="col-sm-6">
-		<ul>
+		<ul class="list-group">
 			{% for currency in currencies %}
-			<li>
+			<li class="list-group-item">
 				<a href="/currency-rss-feed/{{currency.short_name}}/rss.xml">
 					<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="flag flag-{{currency.country_code}}" alt="Exchange rate rss feed {{currency.long_name}}" /> {{currency.long_name}} - {{currency.short_name}}
 				</a>
