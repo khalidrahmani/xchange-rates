@@ -7,7 +7,7 @@ var request   = require("request"),
 exports.index = function (req, res){  
   Currency.getCurrencies(function(currencies){
     res.render('main/index', {
-      title: 'Currency Converter',
+      title: 'Welcome to XchangeRates',
       currencies: currencies
     });
   });  
@@ -21,7 +21,7 @@ exports.show = function (req, res){
   Currency.getCurrencies(function(currencies){    
     Rate.getHistoricalRates(view, from, to, function(rates, current_rate){
       res.render('main/show', {
-        title: 'Exchange rates',
+        title: 'Convert '+ currencies[from] + ' to '+ currencies[to],
         chart_data: JSON.stringify(rates),
         current_rate: current_rate,
         result: Math.round(current_rate*amount*100)/100,
