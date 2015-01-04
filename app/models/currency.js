@@ -122,7 +122,7 @@ getCurrencies: function (cb) {
   MMK: 'Myanma Kyat',
   NAD: 'Namibian Dollar',
   NPR: 'Nepalese Rupee',
-  ANG: 'Netherlands Antillean Guilder',
+  ANG: 'Netherlands Guilder',
   TWD: 'New Taiwan Dollar',
   NZD: 'New Zealand Dollar',
   NIO: 'Nicaraguan Córdoba',

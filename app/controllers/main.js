@@ -30,7 +30,8 @@ exports.show = function (req, res){
 };
 
 exports.CurrencyRSSFeeds = function (req, res){  
-  Currency.find({}).sort({long_name: 1}).exec(function (err, currencies){
+  //Currency.find({}).sort({long_name: 1}).exec(function (err, currencies){
+  Currency.getCurrencies(function(currencies){  
     res.render('main/rss', {
       currencies: currencies,
       title: 'RSS Feed For All Currencies'
@@ -39,13 +40,12 @@ exports.CurrencyRSSFeeds = function (req, res){
 };
 
 exports.CurrencyRSSFeed = function (req, res){
-
   Currency.getCurrencies(function(currencies_array){
     from_currency = req.params.currency
     Rate.findOne({}).sort({timestamp: -1}).exec(function(err, current_rate){ 
       var feed = new RSS({
           title:          'Latest Exchange Rates For '+ currencies_array[from_currency],
-          description:    'RSS Exchange Feed for '+from_currency,
+          description:    'RSS Exchange Feed for '+currencies_array[from_currency],
           copyright:      'Copyright © 2015 www.xchange-rates.com All rights reserved'
       });
       rates = current_rate.rates
