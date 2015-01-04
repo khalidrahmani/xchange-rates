@@ -17,7 +17,22 @@ CurrencySchema.virtual('country_code').get(function () {
 CurrencySchema.statics = {  
 getCurrencies: function (cb) {  
 	cb(
-{ AFN: 'Afghan Afghani',
+{ 
+USD: 'United States Dollar',
+EUR: 'Euro',
+GBP: 'British Pound Sterling',
+CAD: 'Canadian Dollar',
+  SEK: 'Swedish Krona',
+  CHF: 'Swiss Franc',
+  TRY: 'Turkish Lira',
+  
+  BTC: 'Bitcoin',
+
+  XAU: 'Gold (troy ounce)',
+  XAG: 'Silver (troy ounce)',
+
+
+AFN: 'Afghan Afghani',
   ALL: 'Albanian Lek',
   DZD: 'Algerian Dinar',
   AOA: 'Angolan Kwanza',
@@ -34,12 +49,11 @@ getCurrencies: function (cb) {
   BZD: 'Belize Dollar',
   BMD: 'Bermudan Dollar',
   BTN: 'Bhutanese Ngultrum',
-  BTC: 'Bitcoin',
+
   BOB: 'Bolivian Boliviano',
   BAM: 'Bosnia-Herzegovina',
   BWP: 'Botswanan Pula',
   BRL: 'Brazilian Real',
-  GBP: 'British Pound Sterling',
   BND: 'Brunei Dollar',
   BGN: 'Bulgarian Lev',
   BIF: 'Burundian Franc',
@@ -47,7 +61,6 @@ getCurrencies: function (cb) {
   XAF: 'CFA Franc BEAC',
   XPF: 'CFP Franc',
   KHR: 'Cambodian Riel',
-  CAD: 'Canadian Dollar',
   CVE: 'Cape Verdean Escudo',
   KYD: 'Cayman Islands Dollar',
   CLP: 'Chilean Peso',
@@ -68,14 +81,14 @@ getCurrencies: function (cb) {
   ERN: 'Eritrean Nakfa',
   EEK: 'Estonian Kroon',
   ETB: 'Ethiopian Birr',
-  EUR: 'Euro',
+
   FKP: 'Falkland Islands Pound',
   FJD: 'Fijian Dollar',
   GMD: 'Gambian Dalasi',
   GEL: 'Georgian Lari',
   GHS: 'Ghanaian Cedi',
   GIP: 'Gibraltar Pound',
-  XAU: 'Gold (troy ounce)',
+
   GTQ: 'Guatemalan Quetzal',
   GGP: 'Guernsey Pound',
   GNF: 'Guinean Franc',
@@ -148,19 +161,16 @@ getCurrencies: function (cb) {
   RSD: 'Serbian Dinar',
   SCR: 'Seychellois Rupee',
   SLL: 'Sierra Leonean Leone',
-  XAG: 'Silver (troy ounce)',
   SGD: 'Singapore Dollar',
   SBD: 'Solomon Islands Dollar',
   SOS: 'Somali Shilling',
   ZAR: 'South African Rand',
   KRW: 'South Korean Won',
-  XDR: 'Special Drawing Rights',
   LKR: 'Sri Lankan Rupee',
   SDG: 'Sudanese Pound',
   SRD: 'Surinamese Dollar',
   SZL: 'Swazi Lilangeni',
-  SEK: 'Swedish Krona',
-  CHF: 'Swiss Franc',
+
   SYP: 'Syrian Pound',
   STD: 'São Tomé and Príncipe',
   TJS: 'Tajikistani Somoni',
@@ -169,12 +179,11 @@ getCurrencies: function (cb) {
   TOP: 'Tongan Paʻanga',
   TTD: 'Trinidad and Tobago Dollar',
   TND: 'Tunisian Dinar',
-  TRY: 'Turkish Lira',
   TMT: 'Turkmenistani Manat',
   UGX: 'Ugandan Shilling',
   UAH: 'Ukrainian Hryvnia',
   AED: 'United Arab Emirates Dirham',
-  USD: 'United States Dollar',
+  
   UYU: 'Uruguayan Peso',
   UZS: 'Uzbekistan Som',
   VUV: 'Vanuatu Vatu',
@@ -183,7 +192,9 @@ getCurrencies: function (cb) {
   YER: 'Yemeni Rial',
   ZMW: 'Zambian Kwacha',
   ZMK: 'Zambian Kwacha (pre-2013)',
-  ZWL: 'Zimbabwean Dollar' })
+  ZWL: 'Zimbabwean Dollar',
+  XDR: 'Special Drawing Rights'
+ })
 }}
 
 CurrencySchema.plugin(uniqueValidator, { message: '{PATH} already in use.' })
