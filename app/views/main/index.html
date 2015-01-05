@@ -20,7 +20,6 @@
 </div>
 <div class="form-group">
 <select class="form-control in" name="to" id="to">
-<option value="">Select Currency</option>
 {% for short_name in Object.keys( currencies ) %}
 	{% if short_name == 'BTC' || short_name == 'XAU'|| short_name == 'AFN' %}
 		<option value="" disabled>—————————————</option>
