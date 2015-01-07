@@ -1,115 +1,91 @@
 {% extends '../layouts/layout.html' %}
 {% block main %}
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=523819571070563&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
- <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-        	<form role="form" class="form-inline" action="/show" method="get">         	 	
-            	<div class="form-group">                    
-                    <input type="text" name="amount" class="form-control" value="{{amount || 1}}"/>	
-                </div>        
-              	<div class="form-group">
-<select class="form-control in" name="from" id="from">
-{% for short_name in Object.keys( currencies ) %}
-  {% if short_name == 'BTC' || short_name == 'XAU'|| short_name == 'AFN' %}
-    <option value="" disabled>—————————————</option>
-  {% endif %} 
-  <option value="{{short_name}}">{{short_name}} - {{currencies[short_name]}}</option>
-{% endfor %}
-</select>
-<a class="button" onclick="swap()" href="javascript:;">&lt;&gt;</a>
+<form method="get" action="/show" class="form-inline" role="form">
+<div class="container">
+    <div style="text-align: center;" class="row">        
+            <div class="form-group">  
+                <input type="text" class="form-control small_input" name="amount" id="amount" value="1"/> 
+            </div>
+            <div class="form-group">
+                <select id="from" name="from" class="form-control">     
+                    {% for short_name in Object.keys( currencies ) %}
+                    {% if short_name == 'BTC' || short_name == 'XAU'|| short_name == 'AFN' %}
+                        <option value="" disabled>—————————————</option>
+                    {% endif %} 
+                        <option value="{{short_name}}">{{short_name}} - {{currencies[short_name]}}</option>
+                    {% endfor %}
+                </select>
+                <a href="javascript:;" onclick="swap()" class="btn btn-default">&lt;&gt;</a>
+            </div>
+            <div class="form-group">
+                <select id="to" name="to" class="form-control my_select">
+                    {% for short_name in Object.keys( currencies ) %}
+                    {% if short_name == 'BTC' || short_name == 'XAU'|| short_name == 'AFN' %}<option value="" disabled>—————————————</option>{% endif %}<option value="{{short_name}}">{{short_name}} - {{currencies[short_name]}}</option>{% endfor %}
+                </select>
+            </div>
+            <button value="1day" name="view" class="btn btn-default" type="submit">Get Rate</button>
+    </div>
+  </div>
+<br>
+<div class="container">
+<div class="row"> 
+  <div class="col-md-10">     
+    <div id="rateschart" style='height: 300px; width: 950px;'></div>
+  </div>
+  <div class="col-md-1">  
+    <button class="btn btn-default btn-xs custom_button btn-info" type="submit" name="view" id="1day" value="1day">1 day</button> <br>
+    <button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="1week" value="1week">1 week</button><br>
+    <button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="1month" value="1month">1 month</button> <br>
+    <button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="3months" value="3months">3 months</button> <br>
+    <button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="1year" value="1year">1 year</button> <br>
+    <button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="2years" value="2years">2 years</button> <br>
+    <button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="5years" value="5years">5 years</button> <br>
+  </div>
 </div>
-<div class="form-group">
-<select class="form-control in" name="to" id="to">
-{% for short_name in Object.keys( currencies ) %}
-  {% if short_name == 'BTC' || short_name == 'XAU'|| short_name == 'AFN' %}
-    <option value="" disabled>—————————————</option>
-  {% endif %} 
-  <option value="{{short_name}}">{{short_name}} - {{currencies[short_name]}}</option>
-{% endfor %}
-</select>
-</div>
-<button type="submit" class="button" name="view" value="1day">Get Rate</button>
-<div class="row result">
-   	<div>{{from}}/{{to}} <label>{{current_rate}}</label>
-   	{% if amount != 1 %} - {{amount}}{{from}} = {{result}}{{to}} {% endif %}</div>
-</div>
-
-<div class="row">	
-	<div class="col-md-10">			
-		<div id="rateschart" style='height: 320px; width: 700px;' class="center-block"></div>
-	</div>
-	<div class="col-md-1">	
-		<button class="btn btn-default btn-xs custom_button btn-info" type="submit" name="view" id="1day" value="1day">1 day</button> <br>
-		<button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="1week" value="1week">1 week</button><br>
-		<button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="1month" value="1month">1 month</button> <br>
-		<button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="3months" value="3months">3 months</button> <br>
-		<button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="1year" value="1year">1 year</button> <br>
-		<button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="2years" value="2years">2 years</button> <br>
-		<button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="5years" value="5years">5 years</button> <br>
-	</div>
-</div>
-<div class="row">
-   	<div class="col-md-6" id="share_div"> 
-   			<div class="col-md-2">
-	   		<div class="g-plusone" data-size="tall" data-annotation="none"></div> 
-	   		</div>
-	   		<div class="col-md-2">
-	   		<a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="currency" data-count="none" data-via="XchangeRates">Tweet</a>
-	   		</div>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-		<div class="col-md-2">
-			<div class="fb-like" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
-		</div>
-   	</div>
 </div>
 </form>
-</div>
-</div>
-</div>
+<div class="container"><hr></div>
 {% endblock %}
 {% block script %}
-<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="//code.highcharts.com/stock/highstock.js"></script>
 <script type="text/javascript">
+    function swap(){
+        var tmp = document.getElementById("from").value;
+        document.getElementById("from").value = document.getElementById("to").value;
+        document.getElementById("to").value = tmp;
+    }
 $(function(){
-	$("#{{view}}").removeClass("btn-info").addClass("btn-warning");
-	$('#from').val("{{from}}");
-	$('#to').val("{{to}}");
-	$('#rateschart').highcharts('StockChart', {
-	    chart: {
-			plotBorderWidth: 1
-		},
-		colors: ['#FA7D0A'],
-		yAxis: {
-			opposite: false
-		},
-	    rangeSelector : {
-	        enabled : false
-	    },	            
-			navigator : {
-	        enabled : false
-	    },
-	    scrollbar : {
-	        enabled : false
-	    },            
-	    series : [{
-	        name : 'value',
-	        data : {{ chart_data }},
-	        tooltip: {
-	            valueDecimals: 4
-	        }
-	    }]
-	});
+  $("#{{view}}").removeClass("btn-info").addClass("btn-warning");
+  $('#from').val("{{from}}");
+  $('#to').val("{{to}}");
+  $('#amount').val("{{amount}}");
+  $('#rateschart').highcharts('StockChart', {
+      chart: {
+      plotBorderWidth: 1
+    },
+    colors: ['#FA7D0A'],
+    yAxis: {
+      opposite: false
+    },
+      rangeSelector : {
+          enabled : false
+      },              
+      navigator : {
+          enabled : false
+      },
+      scrollbar : {
+          enabled : false
+      },            
+      series : [{
+          name : 'value',
+          data : {{ chart_data }},
+          tooltip: {
+              valueDecimals: 4
+          }
+      }]
+  });
 })
 </script>
 {% endblock %}
+

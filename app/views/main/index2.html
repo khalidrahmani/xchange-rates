@@ -1,0 +1,42 @@
+{% extends '../layouts/layout.html' %}
+{% block main %}
+<div class="container">
+  	<div style="text-align: center;" class="row">
+		<form method="get" action="/show" class="form-inline" role="form">
+			<div class="form-group">  
+				<input type="text" class="form-control" name="amount" value="1" style="width: 90px;">	
+	  		</div>
+			<div class="form-group">
+				<select id="from" name="from" class="form-control">		
+					{% for short_name in Object.keys( currencies ) %}
+			    	{% if short_name == 'BTC' || short_name == 'XAU'|| short_name == 'AFN' %}
+			        	<option value="" disabled>—————————————</option>
+			    	{% endif %} 
+			    		<option value="{{short_name}}">{{short_name}} - {{currencies[short_name]}}</option>
+					{% endfor %}
+				</select>
+				<a href="javascript:;" onclick="swap()" class="btn btn-default">&lt;&gt;</a>
+			</div>
+			<div class="form-group">
+				<select id="to" name="to" class="form-control my_select">
+					{% for short_name in Object.keys( currencies ) %}
+					{% if short_name == 'BTC' || short_name == 'XAU'|| short_name == 'AFN' %}<option value="" disabled>—————————————</option>{% endif %}<option value="{{short_name}}">{{short_name}} - {{currencies[short_name]}}</option>{% endfor %}
+				</select>
+			</div>
+			<button value="1day" name="view" class="btn btn-default" type="submit">Get Rate</button>
+		</form>
+	</div>
+  </div>
+<br>
+<div class="container"><hr></div>
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+	function swap(){
+		var tmp = document.getElementById("from").value;
+		document.getElementById("from").value = document.getElementById("to").value;
+		document.getElementById("to").value = tmp;
+	}
+	document.getElementById("to").value = "EUR";
+</script>
+{% endblock %}

@@ -3,24 +3,24 @@
 {% block main %}
 <div class="container">
 	<div class="row">	
-	<h3> Exchange Rates RSS Feed for all major currencies.</h3>
 		<div class="col-sm-4">
 		<ul class="list-group">						
-			{% for short_name in Object.keys( currencies ) %}			
-				<li class="list-group-item">
-					<a href="/currency-rss-feed/{{short_name}}/feed.rss">
-						<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="flag flag-{{short_name|replace('^(.{2,2})(.*)', '$1')|lower}}" alt="Exchange rate rss feed {{currencies[short_name]}}" /> {{currencies[short_name]}} - {{short_name}}
-					</a>
-				</li>
-				{% if (loop.index0 !=0 && loop.index0%56 == 0) %}
+			{% for short_name in Object.keys( currencies ) %}
+				{% if (loop.index0 !=0 && loop.index0%55 == 0) %}
 						</ul>
 					</div>
 					<div class="col-sm-4">
 					<ul class="list-group">				
 				{% endif %}
+				<li class="list-group-item">
+					<a href="/currency-rss-feed/{{short_name}}/feed.rss">
+						<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="flag flag-{{short_name|replace('^(.{2,2})(.*)', '$1')|lower}}" alt="Exchange rate rss feed {{currencies[short_name]}}" /> {{currencies[short_name]}} - {{short_name}}
+					</a>
+				</li>				
 			{% endfor %}
 		</ul>
 		</div>
 	</div>
 </div>
+<div class="container"><hr></div>
 {% endblock %}

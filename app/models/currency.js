@@ -24,14 +24,10 @@ GBP: 'British Pound Sterling',
 CAD: 'Canadian Dollar',
   SEK: 'Swedish Krona',
   CHF: 'Swiss Franc',
-  TRY: 'Turkish Lira',
-  
+  TRY: 'Turkish Lira',  
   BTC: 'Bitcoin',
-
   XAU: 'Gold (troy ounce)',
   XAG: 'Silver (troy ounce)',
-
-
 AFN: 'Afghan Afghani',
   ALL: 'Albanian Lek',
   DZD: 'Algerian Dinar',
@@ -49,7 +45,6 @@ AFN: 'Afghan Afghani',
   BZD: 'Belize Dollar',
   BMD: 'Bermudan Dollar',
   BTN: 'Bhutanese Ngultrum',
-
   BOB: 'Bolivian Boliviano',
   BAM: 'Bosnia-Herzegovina',
   BWP: 'Botswanan Pula',
@@ -57,9 +52,6 @@ AFN: 'Afghan Afghani',
   BND: 'Brunei Dollar',
   BGN: 'Bulgarian Lev',
   BIF: 'Burundian Franc',
-  XOF: 'CFA Franc BCEAO',
-  XAF: 'CFA Franc BEAC',
-  XPF: 'CFP Franc',
   KHR: 'Cambodian Riel',
   CVE: 'Cape Verdean Escudo',
   KYD: 'Cayman Islands Dollar',
@@ -191,11 +183,16 @@ AFN: 'Afghan Afghani',
   VND: 'Vietnamese Dong',
   YER: 'Yemeni Rial',
   ZMW: 'Zambian Kwacha',
-  ZMK: 'Zambian Kwacha (pre-2013)',
-  ZWL: 'Zimbabwean Dollar',
-  XDR: 'Special Drawing Rights'
+  ZWL: 'Zimbabwean Dollar'
  })
 }}
+//   XDR: 'Special Drawing Rights'
+/*
+  ZMK: 'Zambian Kwacha (pre-2013)',
 
+  XOF: 'CFA Franc BCEAO',
+  XAF: 'CFA Franc BEAC',
+  XPF: 'CFP Franc',
+*/
 CurrencySchema.plugin(uniqueValidator, { message: '{PATH} already in use.' })
 mongoose.model('Currency', CurrencySchema);

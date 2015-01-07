@@ -17,17 +17,14 @@ module.exports = function (app, passport) {
       failureFlash: 'Invalid email or password.'
     }), users.session);
   app.get('/users/:userId', users.show);
-  
-
   app.param('userId', users.load);
-
   app.get('/', main.index);
   app.get('/show', main.show);  
-  
   app.get('/currency-rss-feeds', main.CurrencyRSSFeeds);    
   app.get('/currency-rss-feed/:currency/feed.rss', main.CurrencyRSSFeed);
+  app.get('/multiple-currencies-exchange-rates', main.MultiCurrency);
+  app.post('/getmultirates', main.getMultiRates);
   //app.get('/main/getData', main.getData);    
-
   app.use(function (err, req, res, next) {
     if (err.message
       && (~err.message.indexOf('not found')
