@@ -67,7 +67,7 @@ p.dm-promo-deal {
     background-image: url("bg.png");
     color: rgba(255, 255, 255, 0.8);
     font-size: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     padding: 30px 15px;
     position: relative;
     text-align: center;
@@ -388,3 +388,4 @@ footer .footer-below {
 }*/
 .small_input{width: 90px !important;}
 .custom_button{width: 60px;margin-top: 15px;}
+.converter_form{text-align: center; margin-top: 20px}
