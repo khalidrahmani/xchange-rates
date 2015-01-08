@@ -44,9 +44,10 @@
     <div id="rateschart" style='height: 300px; width: 680px;'></div>
   </div>  
   <div class="col-md-2">
-  <p class="pull-left"><span class="label label-info">1 {{from}} = {{current_rate}} {{to}}</span> </p>
+  <br>
+  <p class="pull-left"><span class="label label-danger">1 {{from}} = {{current_rate}} {{to}}</span> </p>
   {% if amount != 1%}
-    <p class="pull-left"><span class="label label-info">{{amount}} {{from}} = {{result}} {{to}}</span></p>
+    <p class="pull-left"><span class="label label-danger">{{amount}} {{from}} = {{result}} {{to}}</span></p>
   {% endif %}
   </div>
 </div>
