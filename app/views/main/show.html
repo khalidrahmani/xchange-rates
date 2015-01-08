@@ -29,7 +29,11 @@
 <br>
 <div class="container">
 <div class="row" style="text-align: center;"> 
-  <div class="col-md-2">
+  <div class="col-md-2"><span class="label label-info">1 {{from}} = {{current_rate}} {{to}}</span> 
+  <br> <br>
+  {% if amount != 1%}
+    <span class="label label-info">{{amount}} {{from}} = {{result}} {{to}}</span>
+  {% endif %}
   </div>
   <div class="col-md-7">     
     <div id="rateschart" style='height: 280px; width: 670px;'></div>

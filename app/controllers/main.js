@@ -23,10 +23,8 @@ exports.show = function (req, res){
   Currency.getCurrencies(function(currencies){    
     Rate.getHistoricalRates(view, from, to, function(rates, current_rate){
       page_heading = 'Convert '+ currencies[from] + ' to '+ currencies[to]+', Current Exchange rate is : '+current_rate
-      if(amount!=1){
-        result = Math.round(current_rate*amount*100)/100
-        page_heading+= "<p> "+ amount +" "+from +" = "+result+"  "+to +"</p>"
-      }
+      result = Math.round(current_rate*amount*100)/100
+      //page_heading+= "<p> "+ amount +" "+from +" = "+result+"  "+to +"</p>"      
       res.render('main/show', {
         title: 'Convert '+ currencies[from] + ' to '+ currencies[to],
         page_heading: page_heading,
@@ -36,6 +34,7 @@ exports.show = function (req, res){
         amount: amount,
         from: from,
         to: to,
+        result: result,
         currencies: currencies
       });
     });  
