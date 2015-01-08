@@ -62,7 +62,7 @@
         document.getElementById("to").value = tmp;
     }
 $(function(){
-  $("#{{view}}").removeClass("btn-info").addClass("btn-warning");
+  $("#{{view}}").removeClass("btn-info").addClass("btn-default");
   $('#from').val("{{from}}");
   $('#to').val("{{to}}");
   $('#amount').val("{{amount}}");
@@ -70,7 +70,7 @@ $(function(){
       chart: {
       plotBorderWidth: 1
     },
-    colors: ['#FA7D0A'],
+    colors: ['#5bc0de'],
     yAxis: {
       opposite: false
     },
