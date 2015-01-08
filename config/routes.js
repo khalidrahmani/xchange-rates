@@ -23,7 +23,6 @@ module.exports = function (app, passport) {
   app.get('/currency-rss-feeds', main.CurrencyRSSFeeds);    
   app.get('/currency-rss-feed/:currency/feed.rss', main.CurrencyRSSFeed);
   app.get('/multiple-currencies-exchange-rates', main.MultiCurrency);
-  app.post('/getmultirates', main.getMultiRates);
   //app.get('/main/getData', main.getData);    
   app.use(function (err, req, res, next) {
     if (err.message

@@ -7,7 +7,7 @@ var request   = require("request"),
 exports.index = function (req, res){  
   Currency.getCurrencies(function(currencies){
     res.render('main/index', {
-      title: 'Welcome to XchangeRates',
+      title: 'Currency converter',
       page_heading: '<h1>Exchange Rates</h1>',      
       page_description: '<h3>Select currency and get live and historical exchange rates graph</h3>',      
       currencies: currencies
@@ -89,9 +89,4 @@ exports.MultiCurrency = function (req, res){
       });
     });  
   });  
-};
-
-exports.getMultiRates = function (req, res){  
-  console.log(req.body)  
-  res.json({status: 200})
 };
