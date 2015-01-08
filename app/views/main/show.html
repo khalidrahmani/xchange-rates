@@ -28,16 +28,9 @@
   </div>
 <br>
 <div class="container">
-<div class="row" style="text-align: center;"> 
-  <div class="col-md-2">
-  <p class="pull-right"><span class="label label-info">1 {{from}} = {{current_rate}} {{to}}</span> </p>
-  {% if amount != 1%}
-    <p class="pull-right"><span class="label label-info">{{amount}} {{from}} = {{result}} {{to}}</span></p>
-  {% endif %}
-  </div>
-  <div class="col-md-7">     
-    <div id="rateschart" style='height: 280px; width: 680px;'></div>
-  </div>
+<div class="row"> 
+<div class="col-md-1">  
+</div>
   <div class="col-md-1">  
     <button class="btn btn-default btn-xs custom_button btn-info" type="submit" name="view" id="1day" value="1day">1 day</button> <br>
     <button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="1week" value="1week">1 week</button><br>
@@ -46,6 +39,15 @@
     <button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="1year" value="1year">1 year</button> <br>
     <button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="2years" value="2years">2 years</button> <br>
     <button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="5years" value="5years">5 years</button> <br>
+  </div>
+  <div class="col-md-7">     
+    <div id="rateschart" style='height: 300px; width: 680px;'></div>
+  </div>  
+  <div class="col-md-2">
+  <p class="pull-left"><span class="label label-info">1 {{from}} = {{current_rate}} {{to}}</span> </p>
+  {% if amount != 1%}
+    <p class="pull-left"><span class="label label-info">{{amount}} {{from}} = {{result}} {{to}}</span></p>
+  {% endif %}
   </div>
 </div>
 </div>
