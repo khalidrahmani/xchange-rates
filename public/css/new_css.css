@@ -16,8 +16,8 @@ hr.small {
     margin: 50px auto;
     max-width: 100px;
 }
-.text-yellow {
-    color: #f1c40f;
+.text-red {
+    color: #dd6565;
 }
 p.dm-promo-lead {
     margin-bottom: 10px;
