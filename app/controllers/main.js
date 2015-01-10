@@ -83,7 +83,7 @@ exports.MultiCurrency = function (req, res){
       res.render('main/multi_currencies', {
         currencies: currencies,
         current_rate: current_rate.rates,
-        page_heading: 'Multiple currencies calculator tool',
+        page_heading: 'Multiple currencies calculator tool, all your currencies prices in one page',
         title: 'Multiple currencies converter'
       });
     });  

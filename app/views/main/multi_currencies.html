@@ -29,20 +29,20 @@
 {% block script %}
 <script src="/js/bootstrap-editable.min.js"></script>
 <script type="text/javascript">
-        var rates = {% autoescape false %}{{current_rate|json_encode}}{% endautoescape %}
-        $(function(){
-        $('.rate_value').editable({
-            type: 'text',            
-             success: function(response, newValue) {                
-                var from = $(this).data("name");
-                $( ".rate_value" ).each(function( index ){ 
-                    var to = $(this).data("name");                    
-                    value = (rates[to]/rates[from])*newValue;
-                    value = Math.round(value * 1000) / 1000
-                    $(this).editable('setValue', value);
-                });
-            }
-        });
+var rates = {% autoescape false %}{{current_rate|json_encode}}{% endautoescape %}
+$(function(){
+    $('.rate_value').editable({
+        type: 'text',            
+         success: function(response, newValue) {                
+            var from = $(this).data("name");
+            $( ".rate_value" ).each(function( index ){ 
+                var to = $(this).data("name");                    
+                value = (rates[to]/rates[from])*newValue;
+                value = Math.round(value * 1000) / 1000
+                $(this).editable('setValue', value);
+            });
+        }
     });
-    </script>
+});
+</script>
 {% endblock %}
