@@ -84,7 +84,7 @@ exports.MultiCurrency = function (req, res){
         currencies: currencies,
         current_rate: current_rate.rates,
         page_heading: 'Multiple currencies calculator tool',
-        title: 'Exchange Rates for Multiple currencies'
+        title: 'Multiple currencies converter'
       });
     });  
   });  
