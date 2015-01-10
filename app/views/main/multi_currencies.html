@@ -38,7 +38,7 @@
                 $( ".rate_value" ).each(function( index ){ 
                     var to = $(this).data("name");                    
                     value = (rates[to]/rates[from])*newValue;
-                    value = Math.round(value * 100000) / 100000
+                    value = Math.round(value * 1000) / 1000
                     $(this).editable('setValue', value);
                 });
             }
