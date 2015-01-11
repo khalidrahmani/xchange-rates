@@ -14,7 +14,7 @@ exports.index = function (req, res){
     });
   });  
 };
-
+// ADD DATE TO 
 exports.show = function (req, res){
   var amount      = req.query.amount,
       from        = req.query.from,
@@ -52,7 +52,7 @@ exports.CurrencyRSSFeeds = function (req, res){
 };
 
 exports.CurrencyRSSFeed = function (req, res){
-  Currency.getCurrencies(function(currencies){
+   Currency.getCurrencies(function(currencies){
     from_currency = req.params.currency
     Rate.findOne({}).sort({timestamp: -1}).exec(function(err, current_rate){ 
       var feed = new RSS({
