@@ -26,7 +26,7 @@ if (fs.existsSync(envFile)) {
 module.exports = {
   openexchangeAPPID: '19c36fcf307446fcad05a97734096a76',
   db: 'mongodb://localhost/xchange_rates',
-  facebook: {
+  facebook: { 
     clientID: process.env.FACEBOOK_CLIENTID,
     clientSecret: process.env.FACEBOOK_SECRET,
     callbackURL: "http://localhost:3000/auth/facebook/callback"

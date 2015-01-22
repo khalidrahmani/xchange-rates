@@ -9,15 +9,20 @@
             <div class="form-group">
                 <select id="from" name="from" class="form-control">{%for short_name in Object.keys( currencies )%}{%if (short_name == 'BTC' || short_name == 'XAU'|| short_name == 'AFN')%}<option value="" disabled>—————————————</option>{%endif%}<option value="{{short_name}}">{{short_name}} - {{currencies[short_name]}}</option>{%endfor%}
                 </select>
-                <a href="javascript:;" onclick="swap()" class="btn btn-default">&lt;&gt;</a>
+                <a href="javascript:;" onclick="swap()" class="btn orange-button">&lt;&gt;</a>
             </div>
             <div class="form-group">
                 <select id="to" name="to" class="form-control">{%for short_name in Object.keys( currencies )%}{%if (short_name == 'BTC' || short_name == 'XAU'|| short_name == 'AFN')%}<option value="" disabled>—————————————</option>{%endif%}<option value="{{short_name}}">{{short_name}} - {{currencies[short_name]}}</option>{%endfor%}</select>
             </div>
-            <button value="1day" name="view" class="btn btn-default" type="submit">Get Rate</button>
+            <button value="1day" name="view" class="btn orange-button" type="submit">Get Rate</button>
     </div>
-  </div>
+</div>
 <br>
+<div class="container text-center">
+<p><span class="label label-danger">1 {{from}} = {{current_rate}} {{to}} 
+{% if amount != 1%} # {{amount}} {{from}} = {{result}} {{to}}{% endif %} 
+</span></p>
+</div>
 <div class="container">
 <div class="row"> 
 <div class="col-md-1">  
@@ -32,14 +37,7 @@
     <button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="5years" value="5years">5 years</button> <br>
   </div>
   <div class="col-md-7">     
-    <div id="rateschart" style='height: 300px; width: 680px;'></div>
-  </div>  
-  <div class="col-md-2">
-  <br>
-  <p class="pull-left"><span class="label label-danger">1 {{from}} = {{current_rate}} {{to}}</span> </p>
-  {% if amount != 1%}
-    <p class="pull-left"><span class="label label-danger">{{amount}} {{from}} = {{result}} {{to}}</span></p>
-  {% endif %}
+    <div id="rateschart" width='100%' style='height: 300px;'></div>
   </div>
 </div>
 </div>

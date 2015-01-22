@@ -17,7 +17,10 @@ hr.small {
     max-width: 100px;
 }
 .text-red {
-    color: #dd6565;
+    color: #da552f;
+}
+.text-blue {
+    color: #6caae7;
 }
 p.dm-promo-lead {
     margin-bottom: 10px;
@@ -86,12 +89,12 @@ p.dm-promo-deal {
 @media (min-width: 768px) {
 .sb-page-header {
     font-size: 24px;
-    padding-bottom: 40px;
-    padding-top: 40px;
+    padding-bottom: 30px;
+    padding-top: 30px;
     text-align: left;
 }
 .sb-page-header h1 {
-    font-size: 40px;
+    font-size: 35px;
     line-height: 1;
 }
 }
@@ -99,94 +102,6 @@ p.dm-promo-deal {
 .sb-page-header h1, .sb-page-header p {
     margin-right: 380px;
 }
-}
-.carbonad {
-    -moz-border-bottom-colors: none !important;
-    -moz-border-left-colors: none !important;
-    -moz-border-right-colors: none !important;
-    -moz-border-top-colors: none !important;
-    background: none repeat scroll 0 0 transparent !important;
-    border-color: rgba(255, 255, 255, 0.5) !important;
-    border-image: none !important;
-    border-style: solid !important;
-    border-width: 1px 0 !important;
-    font-size: 13px !important;
-    height: auto !important;
-    line-height: 16px !important;
-    margin: 30px -30px -31px !important;
-    overflow: hidden;
-    padding: 20px !important;
-    text-align: left;
-    width: auto !important;
-}
-.carbonad-img {
-    margin: 0 !important;
-}
-.carbonad-text, .carbonad-tag {
-    display: block !important;
-    float: none !important;
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif !important;
-    height: auto !important;
-    margin-left: 145px !important;
-    width: auto !important;
-}
-.carbonad-text {
-    color: rgba(255, 255, 255, 0.8);
-    padding-top: 0 !important;
-}
-.carbonad-tag {
-    color: inherit !important;
-    text-align: left !important;
-}
-.carbonad-text a, .carbonad-tag a {
-    color: #fff !important;
-}
-.carbonad #azcarbon > img {
-    display: none;
-}
-header.marquee .carbonad {
-    margin: 50px -15px 0 !important;
-}
-@media (min-width: 480px) {
-.carbonad {
-    border-radius: 4px;
-    border-width: 1px !important;
-    margin: 20px auto !important;
-    width: 330px !important;
-}
-header.marquee .carbonad {
-    margin: 50px auto 0 !important;
-}
-}
-@media (min-width: 768px) {
-.carbonad {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-}
-@media (min-width: 992px) {
-.carbonad {
-    margin: 0 !important;
-    padding: 15px !important;
-    position: absolute;
-    right: 15px;
-    top: 0;
-    width: 330px !important;
-}
-header.marquee .carbonad {
-    position: static;
-}
-}
-.previews .thumbnail {
-    background-image: url("/assets/img/premium-bg.png");
-    margin-bottom: 15px;
-    text-align: center;
-}
-.previews .thumbnail img {
-    border: 1px solid #e6e6e6;
-}
-.previews .thumbnail img:hover {
-    opacity: 0.7;
 }
 .previews .thumbnail p {
     margin: 15px 0;
@@ -377,15 +292,15 @@ footer .footer-below {
 .sponsored-ad {
     margin-top: 30px;
 }
-/*
-.btn-default{
-    background: linear-gradient(#007eaf, #1b91cf) repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border: 1px solid #54aef5;
-    font-size: 15px;
-    font-weight: 500;
-    padding: 4px 8px;
-    color: #fff !important;
-}*/
 .small_input{width: 90px !important;}
 .custom_button{width: 60px;margin-top: 15px;}
 .converter_form{text-align: center; margin-top: 20px}
+.orange-button{background-color: #da552f;border-color: #da552f;color: #ffffff;}
+.label-danger {
+    background-color: #da552f;
+}
+.btn-info {
+    background-color: #6caae7;
+    border-color: #6caae7;
+    color: #fff;
+}

@@ -8,8 +8,8 @@ exports.index = function (req, res){
   Currency.getCurrencies(function(currencies){
     res.render('main/index', {
       title: 'Currency converter',
-      page_heading: '<h1>Exchange Rates</h1>',      
-      page_description: '<h3>Select currency and get live and historical exchange rates graph</h3>',      
+      page_heading: '<h1>Currency Converter</h1>',
+      page_description: '<h3>Select currency and get live and historic exchange rates.</h3>',      
       currencies: currencies
     });
   });  
