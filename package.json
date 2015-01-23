@@ -1,19 +1,12 @@
 {
-  "name": "nodejs-express-mongoose-demo",
-  "description": "A demo app illustrating the usage of express, mongoose, passportjs, swig and other modules in nodejs",
-  "keywords": [
-    "express",
-    "mongoose",
-    "mongodb",
-    "passport",
-    "demo"
-  ],
+  "name": "x-currencyconverter.com",
+  "description": "Currency converter",
   "version": "4.0.0",
-  "private": false,
-  "author": "Madhusudhan Srinivasa <madhums8@gmail.com> (http://madhums.github.com)",
+  "private": true,
+  "author": "Khalid Rahmani",
   "repository": {
     "type": "git",
-    "url": "https://github.com/madhums/node-express-mongoose-demo.git"
+    "url": ""
   },
   "engines": {
     "node": "0.11.13"
@@ -27,18 +20,12 @@
     "body-parser": "latest",
     "compression": "latest",
     "connect-mongo": "latest",
-    "cookie-parser": "latest",
-    "cookie-session": "latest",
     "express": "latest",
-    "express-session": "latest",
     "forever": "latest",
     "method-override": "latest",
     "mongoose": "latest",
     "notifier": "latest",
-    "passport": "latest",
-    "passport-local": "latest",
     "swig": "latest",
-    "view-helpers": "latest",
     "serve-favicon": "latest",
     "validator": "latest",    
     "mongoose-validator": "latest",

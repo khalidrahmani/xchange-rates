@@ -2,7 +2,6 @@
 var fs = require('fs');
 var express = require('express');
 var mongoose = require('mongoose');
-var passport = require('passport');
 var config = require('./config/config');
 
 var app = express();
@@ -21,11 +20,9 @@ fs.readdirSync(__dirname + '/app/models').forEach(function (file) {
   if (~file.indexOf('.js')) require(__dirname + '/app/models/' + file);
 });
 
-require('./config/passport')(passport, config);
+require('./config/express')(app);
 
-require('./config/express')(app, passport);
-
-require('./config/routes')(app, passport);
+require('./config/routes')(app);
 
 app.listen(port);
 console.log('Express app started on port ' + port);

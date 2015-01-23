@@ -1,23 +1,6 @@
-var users = require('../app/controllers/users');
 var main = require('../app/controllers/main');
-var auth = require('./middlewares/authorization');
 
-var articleAuth = [auth.requiresLogin, auth.article.hasAuthorization];
-var commentAuth = [auth.requiresLogin, auth.comment.hasAuthorization];
-
-module.exports = function (app, passport) {
-
-  app.get('/login', users.login);
-  app.get('/signup', users.signup);
-  app.get('/logout', users.logout);
-  app.post('/users', users.create);
-  app.post('/users/session',
-    passport.authenticate('local', {
-      failureRedirect: '/login',
-      failureFlash: 'Invalid email or password.'
-    }), users.session);
-  app.get('/users/:userId', users.show);
-  app.param('userId', users.load);
+module.exports = function (app) {
   app.get('/', main.index);
   app.get('/show', main.show);  
   app.get('/currency-rss-feeds', main.CurrencyRSSFeeds);    
