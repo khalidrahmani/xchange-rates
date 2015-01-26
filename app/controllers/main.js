@@ -7,7 +7,7 @@ var request   = require("request"),
 exports.index = function (req, res){  
   Currency.getCurrencies(function(currencies){
     res.render('main/index', {
-      title: 'Currency converter',
+      title: 'Exchange Rates Calculator',
       page_heading: '<h2>Up to date Currency Converter</h2>',
       page_description: '<h3>Select currency and get live and historic exchange rates.</h3>',      
       currencies: currencies
