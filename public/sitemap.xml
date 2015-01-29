@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-  <loc>http://www.x-currencyconverter.com/</loc> 
-</url>
-<url>
-  <loc>http://www.x-currencyconverter.com/about.html</loc>  
-</url>
-<url>
-  <loc>http://www.x-currencyconverter.com/currency-rss-feeds</loc>  
-</url>
-<url>
-  <loc>http://www.x-currencyconverter.com/multiple-currencies-exchange-rates</loc>  
-</url>
+	<url>
+	  <loc>http://www.currency-converter.io/</loc> 
+	</url>
+	<url>
+	  <loc>http://www.currency-converter.io/about.html</loc>  
+	</url>
+	<url>
+	  <loc>http://www.currency-converter.io/currency-rss-feeds</loc>  
+	</url>
+	<url>
+	  <loc>http://www.currency-converter.io/multiple-currencies-exchange-rates</loc>  
+	</url>
 </urlset>
