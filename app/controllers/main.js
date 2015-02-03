@@ -16,9 +16,9 @@ exports.index = function (req, res){
 };
 // ADD DATE TO 
 exports.show = function (req, res){
-  var amount      = req.query.amount,
+  var amount      = req.query.amount || 1,
       from        = req.query.from || 'USD',
-      to          = req.query.to || 'EUR',
+      to          = req.query.to   || 'EUR',
       view        = req.query.view || '1day'
   Currency.getCurrencies(function(currencies){    
     Rate.getHistoricalRates(view, from, to, function(rates, current_rate){
