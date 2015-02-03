@@ -17,9 +17,9 @@ exports.index = function (req, res){
 // ADD DATE TO 
 exports.show = function (req, res){
   var amount      = req.query.amount,
-      from        = req.query.from,
-      to          = req.query.to,
-      view  = req.query.view
+      from        = req.query.from || 'USD',
+      to          = req.query.to || 'EUR',
+      view        = req.query.view || '1day'
   Currency.getCurrencies(function(currencies){    
     Rate.getHistoricalRates(view, from, to, function(rates, current_rate){
       page_heading = 'Convert '+ currencies[from] + ' to '+ currencies[to]+', Current Exchange rate is : '+current_rate
