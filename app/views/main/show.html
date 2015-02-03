@@ -17,28 +17,23 @@
             <button value="1day" name="view" class="btn orange-button" type="submit">Get Rate</button>
     </div>
 </div>
-<br>
-<div class="container text-center">
-<p><span class="label label-danger">1 {{from}} = {{current_rate}} {{to}} 
-{% if amount != 1%} # {{amount}} {{from}} = {{result}} {{to}}{% endif %} 
-</span></p>
-</div>
 <div class="container">
 <div class="row"> 
-<div class="col-md-1">  
-</div>
-  <div class="col-md-1">  
-    <button class="btn btn-default btn-xs custom_button btn-info" type="submit" name="view" id="1day" value="1day">1 day</button> <br>
-    <button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="1week" value="1week">1 week</button><br>
-    <button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="1month" value="1month">1 month</button> <br>
-    <button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="3months" value="3months">3 months</button> <br>
-    <button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="1year" value="1year">1 year</button> <br>
-    <button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="2years" value="2years">2 years</button> <br>
-    <button class="btn btn-default btn-xs btn-info custom_button" type="submit" name="view" id="5years" value="5years">5 years</button> <br>
+<div class="col-md-2"> </div> 
+  <div class="col-md-8 center_div">     
+ <button class="btn custom_button btn-xs orange-button">1 {{from}} = {{current_rate}} {{to}} 
+{% if amount != 1%} # {{amount}} {{from}} = {{result}} {{to}}{% endif %} 
+</button>
+<button class="btn btn-xs custom_button btn-info" type="submit" name="view" id="1day" value="1day">1 day</button>
+<button class="btn btn-xs custom_button btn-info" type="submit" name="view" id="1week" value="1week">1 week</button>  
+<button class="btn btn-xs custom_button btn-info" type="submit" name="view" id="1month" value="1month">1 month</button>
+<button class="btn btn-xs custom_button btn-info" type="submit" name="view" id="3months" value="3months">3 months</button>
+<button class="btn btn-xs custom_button btn-info" type="submit" name="view" id="1year" value="1year">1 year</button>   
+<button class="btn btn-xs custom_button btn-info" type="submit" name="view" id="2years" value="2years">2 years</button>
+<button class="btn btn-xs custom_button btn-info" type="submit" name="view" id="5years" value="5years">5 years</button>
+ <div id="rateschart" width='100%' style='height: 300px;'></div>
   </div>
-  <div class="col-md-7">     
-    <div id="rateschart" width='100%' style='height: 300px;'></div>
-  </div>
+  <div class="col-md-2"> </div> 
 </div>
 </div>
 </form>
