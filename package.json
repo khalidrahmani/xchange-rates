@@ -1,5 +1,5 @@
 {
-  "name": "x-currencyconverter.com",
+  "name": "www.currency-converter.io",
   "description": "Currency converter",
   "version": "4.0.0",
   "private": true,
@@ -26,7 +26,6 @@
     "mongoose": "latest",
     "notifier": "latest",
     "swig": "latest",
-    "serve-favicon": "latest",
     "validator": "latest",    
     "mongoose-validator": "latest",
     "request": "latest",
