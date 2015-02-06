@@ -3,7 +3,6 @@ var compression = require('compression');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var swig = require('swig');
-//var favicon = require('serve-favicon');
 var config = require('./config');
 
 var env = process.env.NODE_ENV || 'development';
@@ -15,7 +14,6 @@ module.exports = function (app) {
   }));
 
   app.use(express.static(config.root + '/public'));
-//  app.use(favicon(__dirname + '/../public/favicon.ico'));
 
   if (env === 'development' || env === 'test') {
     swig.setDefaults({
