@@ -295,7 +295,8 @@ footer .footer-below {
 }
 .small_input{width: 90px !important;}
 .custom_button{margin-top: 10px;}
-.converter_form{text-align: center; margin-top: 20px}
+.converter_form{text-align: center; 
+/*margin-top: 20px*/}
 .center_div{text-align: center}
 .orange-button{background-color: #da552f;border-color: #da552f;color: #ffffff;}
 .label-danger {
