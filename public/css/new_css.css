@@ -18,7 +18,7 @@ hr.small {
 }
 hr.hsmall {margin: 10px auto; max-width: 100px;}
 .text-red {
-    color: #da552f;
+    color: #31b0d5;
 }
 .text-blue {
     color: #6caae7;
@@ -295,15 +295,8 @@ footer .footer-below {
 }
 .small_input{width: 90px !important;}
 .custom_button{margin-top: 10px;}
-.converter_form{text-align: center; 
-/*margin-top: 20px*/}
+.converter_form{text-align: center; /*margin-top: 20px*/}
 .center_div{text-align: center}
-.orange-button{background-color: #da552f;border-color: #da552f;color: #ffffff;}
-.label-danger {
-    background-color: #da552f;
-}
-.btn-info {
-    background-color: #6caae7;
-    border-color: #6caae7;
-    color: #fff;
-}
+.orange-button{background-color: #31b0d5;border-color: #31b0d5;color: #ffffff;}
+.label-danger {background-color: #31b0d5;}
+.btn-info {background-color: #005c97;border-color: #005c97;color: #fff;}
