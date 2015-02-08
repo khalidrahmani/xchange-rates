@@ -22,7 +22,7 @@ RateSchema.statics = {
     ranges = {'1day':    {d:'hour',  n: 1, v: 'day'},
               '1week':   {d:'hour',  n: 1, v: 'week'}, 
               '1month':  {d:'hour',   n: 1, v: 'month'}, 
-              '3months': {d:'day',   n: 3, v: 'month'}, 
+              '3months': {d:'hour',   n: 3, v: 'month'}, 
               '1year':   {d:'week',  n: 1, v: 'year'}, 
               '2years':  {d:'week',  n: 2, v: 'year'},
               '5years':  {d:'month', n: 5, v: 'year'}}              

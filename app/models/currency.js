@@ -162,7 +162,6 @@ AFN: 'Afghan Afghani',
   SDG: 'Sudanese Pound',
   SRD: 'Surinamese Dollar',
   SZL: 'Swazi Lilangeni',
-
   SYP: 'Syrian Pound',
   STD: 'São Tomé and Príncipe',
   TJS: 'Tajikistani Somoni',
