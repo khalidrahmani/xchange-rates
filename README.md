@@ -13,7 +13,6 @@ User friendly currency converter and calculator, up to date exchange rates, hist
 
 Online currency converter for all major world currencies, live and historic exchange rates.
 
-
 <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,700italic,400,700" rel="stylesheet" type="text/css">
 
@@ -24,8 +23,6 @@ Online currency converter for all major world currencies, live and historic exch
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-59121803-1', 'auto');ga('send', 'pageview');
 </script>
-
-
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Mobile Ad 320 100 -->
