@@ -16,15 +16,15 @@ CurrencySchema.virtual('country_code').get(function () {
 
 CurrencySchema.statics = {  
 getCurrencies: function (cb) {  
-	cb(
-{ 
+	cb({ 
 USD: 'United States Dollar',
 EUR: 'Euro',
 GBP: 'British Pound',
+AUD: 'Australian Dollar',
 CAD: 'Canadian Dollar',
   SEK: 'Swedish Krona',
   CHF: 'Swiss Franc',
-  TRY: 'Turkish Lira',  
+  TRY: 'Turkish Lira',
   BTC: 'Bitcoin',
   XAU: 'Gold (troy ounce)',
   XAG: 'Silver (troy ounce)',
@@ -35,7 +35,7 @@ AFN: 'Afghan Afghani',
   ARS: 'Argentine Peso',
   AMD: 'Armenian Dram',
   AWG: 'Aruban Florin',
-  AUD: 'Australian Dollar',
+  
   AZN: 'Azerbaijani Manat',
   BSD: 'Bahamian Dollar',
   BHD: 'Bahraini Dinar',
@@ -184,7 +184,20 @@ AFN: 'Afghan Afghani',
   ZMW: 'Zambian Kwacha',
   ZWL: 'Zimbabwean Dollar'
  })
-}}
+},
+getLimitedCurrencies: function (cb) {  
+  cb({ 
+  USD: 'United States Dollar',
+  EUR: 'Euro',
+  GBP: 'British Pound',
+  AUD: 'Australian Dollar',
+  CAD: 'Canadian Dollar',
+  SEK: 'Swedish Krona',
+  CHF: 'Swiss Franc',
+  TRY: 'Turkish Lira'
+ })
+}
+}
 //   XDR: 'Special Drawing Rights'
 /*
   ZMK: 'Zambian Kwacha (pre-2013)',
