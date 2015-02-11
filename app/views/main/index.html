@@ -16,12 +16,12 @@
                 <input type="text" class="form-control small_input" name="amount" value="1"/> 
             </div>
             <div class="form-group">
-                <select id="from" name="from" class="form-control">{%for short_name in Object.keys( currencies )%}<option value="{{short_name}}">{{short_name}} - {{currencies[short_name]}}</option>{%endfor%}<option value="" disabled>Convert and get all currencies</option>
+                <select id="from" name="from" class="form-control">{%for short_name in Object.keys( currencies )%}<option value="{{short_name}}">{{short_name}} - {{currencies[short_name]}}</option>{%endfor%}<option value="" disabled>Convert to get all currencies</option>
                 </select>
                 <a href="javascript:;" onclick="swap()" class="btn orange-button">&lt;&gt;</a>
             </div>
             <div class="form-group">
-                <select id="to" name="to" class="form-control">{%for short_name in Object.keys( currencies )%}<option value="{{short_name}}">{{short_name}} - {{currencies[short_name]}}</option>{%endfor%}<option value="" disabled>Convert and get all currencies</option>
+                <select id="to" name="to" class="form-control">{%for short_name in Object.keys( currencies )%}<option value="{{short_name}}">{{short_name}} - {{currencies[short_name]}}</option>{%endfor%}<option value="" disabled>Convert to get all currencies</option>
                 </select>
             </div>
             <button value="1day" name="view" class="btn orange-button" type="submit">Convert</button>
