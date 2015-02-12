@@ -45,7 +45,7 @@ app.factory('mainFactory', function($http){
     return $http.get('/main/getData'+params)
   }
   return factory;
-});*/
+});
 $(function(){	
 	$('#from').val(from);
 	$('#to').val(to);
@@ -74,4 +74,4 @@ $(function(){
 	        }
 	    }]
 	});	
-})
+})*/

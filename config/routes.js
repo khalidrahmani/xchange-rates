@@ -2,7 +2,8 @@ var main = require('../app/controllers/main');
 
 module.exports = function (app) {
   app.get('/', main.index);
-  app.get('/show', main.show);  
+  app.get('/show', main.show); 
+  app.get('/about-currency-converter', main.about);  
   app.get('/currency-rss-feeds', main.CurrencyRSSFeeds);    
   app.get('/currency-rss-feed/:currency/feed.rss', main.CurrencyRSSFeed);
   app.get('/multiple-currencies-exchange-rates', main.MultiCurrency);

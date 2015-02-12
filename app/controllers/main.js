@@ -89,3 +89,10 @@ exports.MultiCurrency = function (req, res){
     });  
   });  
 };
+
+exports.about = function (req, res){    
+    res.render('main/about', {      
+      title: 'About the currency converter',
+      page_heading: 'RSS Feed For All Currencies'
+    });  
+};
