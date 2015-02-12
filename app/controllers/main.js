@@ -56,9 +56,9 @@ exports.CurrencyRSSFeed = function (req, res){
     from_currency = req.params.currency
     Rate.findOne({}).sort({timestamp: -1}).exec(function(err, current_rate){ 
       var feed = new RSS({
-          title:          'Latest Exchange Rates For '+ currencies[from_currency],
-          description:    'RSS Exchange Feed for '+currencies[from_currency],
-          copyright:      'Copyright © 2015 www.x-currencyconverter.com.com All rights reserved'
+          title:          'Currency converter Latest Exchange Rates For '+ currencies[from_currency],
+          description:    'Currency converter RSS Feed for '+currencies[from_currency],
+          copyright:      'Copyright © 2015 www.currency-converter.io All rights reserved'
       });
       rates = current_rate.rates
       for(currency in rates){
@@ -67,7 +67,7 @@ exports.CurrencyRSSFeed = function (req, res){
         feed.item({
           title:  from_currency+'/'+currency,
           description: '1 ' + currencies[from_currency]+ ' = '+r+' '+currencies[currency],
-          url: 'http://www.xchange-rates.com.com/show?amount=1&from='+from_currency+'&to='+currency+'&view=1month',
+          url: 'http://www.currency-converter.io/show?amount=1&from='+from_currency+'&to='+currency+'&view=1month',
           date: current_rate.timestamp*1000 // any format that js Date can parse.  
         }); 
       } 

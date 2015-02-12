@@ -14,7 +14,7 @@
 				{% endif %}
 				<li class="list-group-item">
 					<a href="/currency-rss-feed/{{short_name}}/feed.rss">
-						<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="flag flag-{{short_name|replace('^(.{2,2})(.*)', '$1')|lower}}" alt="Exchange rate rss feed {{currencies[short_name]}}" /> {{currencies[short_name]}} - {{short_name}}
+						<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="flag flag-{{short_name|replace('^(.{2,2})(.*)', '$1')|lower}}" alt=" currency converter exchange rate {{currencies[short_name]}}" /> {{currencies[short_name]}} - {{short_name}}
 					</a>
 				</li>
 			{% endfor %}

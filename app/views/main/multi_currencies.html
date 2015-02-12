@@ -24,7 +24,7 @@
                     <ul class="list-group">             
                 {% endif %}
                 <li class="list-group-item">                    
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="flag flag-{{short_name|replace('^(.{2,2})(.*)', '$1')|lower}}" alt="Exchange rate currency {{currencies[short_name]}}" /> {{currencies[short_name]}} - {{short_name}}                     
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="flag flag-{{short_name|replace('^(.{2,2})(.*)', '$1')|lower}}" alt="Currency converter {{currencies[short_name]}}" /> {{currencies[short_name]}} - {{short_name}}                     
                     <a href="javascript:;" id="{{short_name}}" class="pull-right rate_value" data-name="{{short_name}}" title="{{currencies[short_name]}} ">{{current_rate[short_name]}}</a>
                 </li>
             {% endfor %}
