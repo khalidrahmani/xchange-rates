@@ -72,25 +72,25 @@ exports.CurrencyRSSFeed = function (req, res){
         }); 
       } 
       res.set('Content-Type', 'text/xml');
-      res.send(feed.xml());       
+      res.send(feed.xml());
     })
-  })  
+  })
 };
 
-exports.MultiCurrency = function (req, res){ 
-  Rate.findOne({}).sort({timestamp: -1}).exec(function(err, current_rate){  
-    Currency.getCurrencies(function(currencies){  
+exports.MultiCurrency = function (req, res){
+  Rate.findOne({}).sort({timestamp: -1}).exec(function(err, current_rate){
+    Currency.getCurrencies(function(currencies){
       res.render('main/multi_currencies', {
         currencies: currencies,
         current_rate: current_rate.rates,
         page_heading: 'Multiple currency converter tool, all your currencies prices in one page.',
         title: 'Multiple currency converter'
       });
-    });  
-  });  
+    });
+  });
 };
 
-exports.about = function (req, res){    
+exports.about = function (req, res){
     res.render('main/about', {      
       title: 'About the currency converter',
       page_heading: 'About the currency converter'

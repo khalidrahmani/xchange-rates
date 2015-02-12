@@ -6,7 +6,7 @@ module.exports = function (app) {
   app.get('/about-currency-converter', main.about);  
   app.get('/currency-rss-feeds', main.CurrencyRSSFeeds);    
   app.get('/currency-rss-feed/:currency/feed.rss', main.CurrencyRSSFeed);
-  app.get('/multiple-currencies-exchange-rates', main.MultiCurrency);
+  app.get('/multi-currency-converter', main.MultiCurrency);
   //app.get('/main/getData', main.getData);    
   app.use(function (err, req, res, next) {
     if (err.message
