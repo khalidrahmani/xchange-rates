@@ -6,6 +6,20 @@ youtube.com
 https://en.wikipedia.org/wiki/North_American_monetary_union // added link
 alexa
 
+TODO :
+ - social sharing on /show page
+
+
+
+
+
+
+
+
+
+
+
+
 READ OR 
 
 Full-featured foreign currency converter with live rates. 

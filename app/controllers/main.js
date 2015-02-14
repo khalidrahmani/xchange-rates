@@ -9,7 +9,7 @@ exports.index = function (req, res){
     res.render('main/index', {
       title: 'Easy and accurate currency convertion',
       page_heading: '<h1>Accurate foreign currency converter.</h1>',
-      page_description: '<h3>Select currency and get live and historic exchange rates.</h3>',      
+      page_description: '<h3>Up to Date exchange rates and historic currency charts.</h3>',      
       currencies: currencies
     });
   });  
