@@ -90,7 +90,7 @@ p.dm-promo-deal {
 @media (min-width: 768px) {
 .sb-page-header {
     font-size: 24px;
-    padding-bottom: 25px;
+    padding-bottom: 10px;
     padding-top: 25px;
     text-align: left;
 }

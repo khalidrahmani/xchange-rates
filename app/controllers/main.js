@@ -5,7 +5,7 @@ var request   = require("request"),
     RSS       = require('rss')
 
 exports.index = function (req, res){  
-  Currency.getLimitedCurrencies(function(currencies){
+  Currency.getCurrencies(function(currencies){
     res.render('main/index', {
       title: 'Easy and accurate currency convertion',
       page_heading: '<h1>Accurate foreign currency converter.</h1>',
