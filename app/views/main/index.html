@@ -23,7 +23,7 @@
             <div class="form-group">
                 <select id="to" name="to" class="form-control">{%for short_name in Object.keys( currencies )%}{%if (short_name == 'BTC' || short_name == 'XAU'|| short_name == 'AFN')%}<option value="" disabled>—————————————</option>{%endif%}<option value="{{short_name}}">{{short_name}} - {{currencies[short_name]}}</option>{%endfor%}</select>
             </div>
-            <button value="1day" name="view" class="btn orange-button" type="submit">Convert</button>
+            <button value="1day" name="convert" class="btn orange-button" type="submit">Convert</button>
         </form>
     </div>
 </div>
