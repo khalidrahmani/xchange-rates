@@ -48,7 +48,7 @@ exports.CurrencyRSSFeeds = function (req, res){
     res.render('main/rss', {
       currencies: currencies,
       title: 'RSS Feed For All Currencies',
-      description: 'Currency converter, RSS Feed For All Major WorldCurrencies.',
+      description: 'Foreign currency converter tool, up to date exchange rates, RSS Feed For All Major World Currencies.',
       page_heading: 'RSS Feed For All Currencies'
     });
   });  
