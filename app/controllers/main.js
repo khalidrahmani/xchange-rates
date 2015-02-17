@@ -8,6 +8,7 @@ exports.index = function (req, res){
   Currency.getCurrencies(function(currencies){
     res.render('main/index', {
       title: 'Easy and accurate currency convertion',
+      description: 'Full featured foreign currency converter and calculator, accurate exchange rates, historic graphs and currency prices for all major world currencies.',
       page_heading: '<h1>Accurate foreign currency converter.</h1>',
       page_description: '<h3>Up to Date exchange rates and historic currency charts.</h3>',      
       currencies: currencies
@@ -27,6 +28,7 @@ exports.show = function (req, res){
       //page_heading+= "<p> "+ amount +" "+from +" = "+result+"  "+to +"</p>"      
       res.render('main/show', {
         title: 'Convert '+ currencies[from] + ' to '+ currencies[to],
+        description: 'Currency converter and historic graphs.',
         page_heading: page_heading,
         chart_data: JSON.stringify(rates),
         current_rate: current_rate,        
@@ -42,17 +44,18 @@ exports.show = function (req, res){
 };
 
 exports.CurrencyRSSFeeds = function (req, res){  
-  Currency.getCurrencies(function(currencies){  
+  Currency.getOriginalCurrencies(function(currencies){  
     res.render('main/rss', {
       currencies: currencies,
       title: 'RSS Feed For All Currencies',
+      description: 'Currency converter, RSS Feed For All Major WorldCurrencies.',
       page_heading: 'RSS Feed For All Currencies'
     });
   });  
 };
 
 exports.CurrencyRSSFeed = function (req, res){
-   Currency.getCurrencies(function(currencies){
+   Currency.getOriginalCurrencies(function(currencies){
     from_currency = req.params.currency
     Rate.findOne({}).sort({timestamp: -1}).exec(function(err, current_rate){ 
       var feed = new RSS({
@@ -79,12 +82,13 @@ exports.CurrencyRSSFeed = function (req, res){
 
 exports.MultiCurrency = function (req, res){
   Rate.findOne({}).sort({timestamp: -1}).exec(function(err, current_rate){
-    Currency.getCurrencies(function(currencies){
+    Currency.getOriginalCurrencies(function(currencies){
       res.render('main/multi_currencies', {
         currencies: currencies,
         current_rate: current_rate.rates,
         page_heading: 'Multiple currency converter tool, all your currencies prices in one page.',
-        title: 'Multiple currency converter'
+        title: 'Multiple currency converter',
+        description: 'Get live rates from our foreign exchange rates tool, with the multiple currency converter tool, get all currencies prices in one place.',
       });
     });
   });
@@ -93,6 +97,7 @@ exports.MultiCurrency = function (req, res){
 exports.about = function (req, res){
     res.render('main/about', {      
       title: 'About the currency converter',
+      description: 'Currency converter tool, full featured application with accurate data and historic graphs.',
       page_heading: 'About the currency converter'
     });  
 };
