@@ -7,7 +7,7 @@ var request   = require("request"),
 exports.index = function (req, res){  
   Currency.getCurrencies(function(currencies){
     res.render('main/index', {
-      title: 'Easy and accurate currency convertion',
+      title: 'foreign exchange rates',
       description: 'Full featured foreign currency converter and calculator, accurate exchange rates, historic graphs and currency prices for all major world currencies.',
       page_heading: '<h1>Accurate foreign currency converter.</h1>',
       page_description: '<h3>Up to Date exchange rates and historic currency charts.</h3>',      
