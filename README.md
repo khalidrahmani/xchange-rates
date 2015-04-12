@@ -9,16 +9,8 @@ alexa
 TODO :
  - social sharing on /show page
 
-
-
-
-
-
-
-
-
-
-
+use 
+curl "https://www.google.com/finance/converter?a=1&from=USD&to=MAD" to get currency values
 
 READ OR 
 
